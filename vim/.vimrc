@@ -30,6 +30,8 @@ call vundle#begin()
 	" Plugin on GitHub repo
 	Plugin 'scrooloose/nerdTree'
 	Plugin 'kien/ctrlp.vim'
+	Plugin 'vim-airline/vim-airline'
+	Plugin 'vim-airline/vim-airline-themes'
 	" Plugin 'file:///home/weidaizi/vim_plugins/YouCompleteMe'
 	Plugin 'Valloric/YouCompleteMe'
 
@@ -67,6 +69,7 @@ map <C-l> <C-W>l
 
 " NERDTree hotkey
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
 " YCM hotkey
 map <F12> :YcmCompleter GoToDeclaration<CR>
@@ -86,3 +89,18 @@ let g:ctrlp_custom_ignore = {
   \ 'link': 'some_bad_symbolic_links',
   \ }
 let g:ctrlp_user_command = 'find %s -type f'
+
+" airline
+"let g:airline_left_sep='>'
+"let g:airline_right_sep='<'
+"let g:airline_detect_modified=1
+"let g:airline_detect_paste=1
+set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 13
+let g:airline_powerline_fonts = 1
+let g:airline_theme='airlineish'
+let g:airline_section_b = '%{strftime("%c")}'
+let g:airline_section_y = 'BN: %{bufnr("%")}'
+let g:airline#extensions#tavline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'

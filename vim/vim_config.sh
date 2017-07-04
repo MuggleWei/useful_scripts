@@ -11,6 +11,13 @@ fi
 # Plugin Install
 vim +PluginInstall +qall
 
+# powerline fonts
+git clone https://github.com/powerline/fonts.git
+cd fonts
+./install.sh
+cd ..
+rm -rf fonts
+
 # YCM
 sudo apt-get install build-essential cmake
 sudo apt-get install python-dev python3-dev
