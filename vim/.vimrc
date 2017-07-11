@@ -104,3 +104,6 @@ let g:airline#extensions#tavline#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+if !has('gui_running')
+  set t_Co=256
+endif
