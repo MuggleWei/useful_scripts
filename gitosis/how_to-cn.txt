@@ -1,0 +1,61 @@
+[服务器配置]
+1. 安装git
+sudo apt-get install git
+
+2. 下载自动配置脚本并运行
+git clone https://github.com/MuggleWei/useful_scripts.git
+
+clone完毕之后，进入目录
+cd useful_scripts/gitosis
+
+运行配置脚本，一路下来 y 或者 直接回车(注意，这里面有生成ssh，如果以前就有，那么这部要修改一下)
+./setup.sh
+
+本步骤结束之后，gitosis便配置完毕
+
+3. 在本机拉取管理库用于未来的项目成员管理
+git clone git@localhost:gitosis-admin.git
+
+此时进入此目录，结构如下
+gitosis.conf: 用于管理成员
+keydir: 用于存放公钥
+
+gitosis.conf文件中大致如下:
+
+[gitosis]
+
+[group gitosis-admin]
+members = mugglewei@mugglewei-virtual-machine
+writable = gitosis-admin
+
+假设现在有团队叫做foo，要干项目bar，则可以添加如下代码
+[group foo]
+members = member_name1 member_name2 member_name3
+writable = bar
+
+分别为成员生成 key对(若之前有生成过，则不用重复了)
+例如： 为团队成员mugglewei生成： ssh-keygen -t rsa -f mugglewei
+将生成的私钥发给mugglewei，公钥放置在 keydir 文件夹中
+
+完成以上步骤，接着在gitosis-admin文件夹中运行:
+git commit -a -m "(说明文字)"
+git push
+
+新建项目:
+mkdir bar
+cd bar
+git init
+git remote add origin git@[MYSERVER]:bar.git	// 其中[MYSERVER]可以填localhost
+# do some work, git add and commit files
+git push origin master
+
+
+[客户端配置]
+成员拿到了前面服务器管理员生成的私钥后
+eval `ssh-agent`
+ssh-add [私钥名]
+
+随后便可对相应的项目进行操作:
+
+获取已存在项目
+git clone git@[MYSERVER]:bar.git
