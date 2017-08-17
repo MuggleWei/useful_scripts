@@ -1,26 +1,26 @@
-[·şÎñÆ÷ÅäÖÃ]
-1. °²×°git
+[æœåŠ¡å™¨é…ç½®]
+1. å®‰è£…git
 sudo apt-get install git
 
-2. ÏÂÔØ×Ô¶¯ÅäÖÃ½Å±¾²¢ÔËĞĞ
+2. ä¸‹è½½è‡ªåŠ¨é…ç½®è„šæœ¬å¹¶è¿è¡Œ
 git clone https://github.com/MuggleWei/useful_scripts.git
 
-cloneÍê±ÏÖ®ºó£¬½øÈëÄ¿Â¼
+cloneå®Œæ¯•ä¹‹åï¼Œè¿›å…¥ç›®å½•
 cd useful_scripts/gitosis
 
-ÔËĞĞÅäÖÃ½Å±¾£¬Ò»Â·ÏÂÀ´ y »òÕß Ö±½Ó»Ø³µ(×¢Òâ£¬ÕâÀïÃæÓĞÉú³Éssh£¬Èç¹ûÒÔÇ°¾ÍÓĞ£¬ÄÇÃ´Õâ²¿ÒªĞŞ¸ÄÒ»ÏÂ)
+è¿è¡Œé…ç½®è„šæœ¬ï¼Œä¸€è·¯ä¸‹æ¥ y æˆ–è€… ç›´æ¥å›è½¦(æ³¨æ„ï¼Œè¿™é‡Œé¢æœ‰ç”Ÿæˆsshï¼Œå¦‚æœä»¥å‰å°±æœ‰ï¼Œé‚£ä¹ˆè¿™éƒ¨è¦ä¿®æ”¹ä¸€ä¸‹)
 ./setup.sh
 
-±¾²½Öè½áÊøÖ®ºó£¬gitosis±ãÅäÖÃÍê±Ï
+æœ¬æ­¥éª¤ç»“æŸä¹‹åï¼Œgitosisä¾¿é…ç½®å®Œæ¯•
 
-3. ÔÚ±¾»úÀ­È¡¹ÜÀí¿âÓÃÓÚÎ´À´µÄÏîÄ¿³ÉÔ±¹ÜÀí
+3. åœ¨æœ¬æœºæ‹‰å–ç®¡ç†åº“ç”¨äºæœªæ¥çš„é¡¹ç›®æˆå‘˜ç®¡ç†
 git clone git@localhost:gitosis-admin.git
 
-´ËÊ±½øÈë´ËÄ¿Â¼£¬½á¹¹ÈçÏÂ
-gitosis.conf: ÓÃÓÚ¹ÜÀí³ÉÔ±
-keydir: ÓÃÓÚ´æ·Å¹«Ô¿
+æ­¤æ—¶è¿›å…¥æ­¤ç›®å½•ï¼Œç»“æ„å¦‚ä¸‹
+gitosis.conf: ç”¨äºç®¡ç†æˆå‘˜
+keydir: ç”¨äºå­˜æ”¾å…¬é’¥
 
-gitosis.confÎÄ¼şÖĞ´óÖÂÈçÏÂ:
+gitosis.confæ–‡ä»¶ä¸­å¤§è‡´å¦‚ä¸‹:
 
 [gitosis]
 
@@ -28,34 +28,34 @@ gitosis.confÎÄ¼şÖĞ´óÖÂÈçÏÂ:
 members = mugglewei@mugglewei-virtual-machine
 writable = gitosis-admin
 
-¼ÙÉèÏÖÔÚÓĞÍÅ¶Ó½Ğ×öfoo£¬Òª¸ÉÏîÄ¿bar£¬Ôò¿ÉÒÔÌí¼ÓÈçÏÂ´úÂë
+å‡è®¾ç°åœ¨æœ‰å›¢é˜Ÿå«åšfooï¼Œè¦å¹²é¡¹ç›®barï¼Œåˆ™å¯ä»¥æ·»åŠ å¦‚ä¸‹ä»£ç 
 [group foo]
 members = member_name1 member_name2 member_name3
 writable = bar
 
-·Ö±ğÎª³ÉÔ±Éú³É key¶Ô(ÈôÖ®Ç°ÓĞÉú³É¹ı£¬Ôò²»ÓÃÖØ¸´ÁË)
-ÀıÈç£º ÎªÍÅ¶Ó³ÉÔ±muggleweiÉú³É£º ssh-keygen -t rsa -f mugglewei
-½«Éú³ÉµÄË½Ô¿·¢¸ømugglewei£¬¹«Ô¿·ÅÖÃÔÚ keydir ÎÄ¼ş¼ĞÖĞ
+åˆ†åˆ«ä¸ºæˆå‘˜ç”Ÿæˆ keyå¯¹(è‹¥ä¹‹å‰æœ‰ç”Ÿæˆè¿‡ï¼Œåˆ™ä¸ç”¨é‡å¤äº†)
+ä¾‹å¦‚ï¼š ä¸ºå›¢é˜Ÿæˆå‘˜muggleweiç”Ÿæˆï¼š ssh-keygen -t rsa -f mugglewei
+å°†ç”Ÿæˆçš„ç§é’¥å‘ç»™muggleweiï¼Œå…¬é’¥æ”¾ç½®åœ¨ keydir æ–‡ä»¶å¤¹ä¸­
 
-Íê³ÉÒÔÉÏ²½Öè£¬½Ó×ÅÔÚgitosis-adminÎÄ¼ş¼ĞÖĞÔËĞĞ:
-git commit -a -m "(ËµÃ÷ÎÄ×Ö)"
+å®Œæˆä»¥ä¸Šæ­¥éª¤ï¼Œæ¥ç€åœ¨gitosis-adminæ–‡ä»¶å¤¹ä¸­è¿è¡Œ:
+git commit -a -m "(è¯´æ˜æ–‡å­—)"
 git push
 
-ĞÂ½¨ÏîÄ¿:
+æ–°å»ºé¡¹ç›®:
 mkdir bar
 cd bar
 git init
-git remote add origin git@[MYSERVER]:bar.git	// ÆäÖĞ[MYSERVER]¿ÉÒÔÌîlocalhost
+git remote add origin git@[MYSERVER]:bar.git	// å…¶ä¸­[MYSERVER]å¯ä»¥å¡«localhost
 # do some work, git add and commit files
 git push origin master
 
 
-[¿Í»§¶ËÅäÖÃ]
-³ÉÔ±ÄÃµ½ÁËÇ°Ãæ·şÎñÆ÷¹ÜÀíÔ±Éú³ÉµÄË½Ô¿ºó
+[å®¢æˆ·ç«¯é…ç½®]
+æˆå‘˜æ‹¿åˆ°äº†å‰é¢æœåŠ¡å™¨ç®¡ç†å‘˜ç”Ÿæˆçš„ç§é’¥å
 eval `ssh-agent`
-ssh-add [Ë½Ô¿Ãû]
+ssh-add [ç§é’¥å]
 
-Ëæºó±ã¿É¶ÔÏàÓ¦µÄÏîÄ¿½øĞĞ²Ù×÷:
+éšåä¾¿å¯å¯¹ç›¸åº”çš„é¡¹ç›®è¿›è¡Œæ“ä½œ:
 
-»ñÈ¡ÒÑ´æÔÚÏîÄ¿
+è·å–å·²å­˜åœ¨é¡¹ç›®
 git clone git@[MYSERVER]:bar.git
