@@ -52,8 +52,19 @@ git push origin master
 
 [客户端配置]
 成员拿到了前面服务器管理员生成的私钥后
+
+长期使用:
+在.ssh文件夹下，生成config文件，做类似配置:
+host 192.168.0.xxx
+	HostName 192.168.0.xxx
+	IdentityFile ~/.ssh/mugglewei
+	User git
+	IdentitiesOnly yes
+
+临时使用:
 eval `ssh-agent`
 ssh-add [私钥名]
+
 
 随后便可对相应的项目进行操作:
 
