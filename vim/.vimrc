@@ -34,6 +34,7 @@ call vundle#begin()
 	Plugin 'vim-airline/vim-airline-themes'
 	" Plugin 'file:///home/weidaizi/vim_plugins/YouCompleteMe'
 	Plugin 'Valloric/YouCompleteMe'
+	Plugin 'altercation/vim-colors-solarized'
 
 	" All of your Plugins must be added before the following line
 	call vundle#end()            " required
@@ -58,6 +59,7 @@ set number
 set autoindent
 set cindent
 set incsearch
+set cursorline
 
 " hotkey
 
@@ -97,7 +99,7 @@ let g:ctrlp_user_command = 'find %s -type f'
 "let g:airline_detect_paste=1
 set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 13
 let g:airline_powerline_fonts = 1
-let g:airline_theme='airlineish'
+let g:airline_theme='dark'
 let g:airline_section_b = '%{strftime("%c")}'
 let g:airline_section_y = 'BN: %{bufnr("%")}'
 let g:airline#extensions#tavline#enabled = 1
@@ -107,3 +109,12 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 if !has('gui_running')
   set t_Co=256
 endif
+
+syntax enable
+if has('gui_running')
+	set background=light
+else
+	set background=dark
+	let g:solarized_termcolors=256
+endif
+colorscheme solarized
