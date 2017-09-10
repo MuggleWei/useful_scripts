@@ -80,7 +80,8 @@ map <C-F12> :YcmCompleter GoToDefinition<CR>
 " plugin configure
 
 " YCM
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+" the statement below will bad for -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+" let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
 " ctrlp
 set wildignore+=build/*,*.so,*.swp,*.zip
