@@ -11,6 +11,9 @@ fi
 # Plugin Install
 vim +PluginInstall +qall
 
+# for taglist 
+sudo apt-get install exuberant-ctags
+
 # powerline fonts
 git clone https://github.com/powerline/fonts.git
 cd fonts
