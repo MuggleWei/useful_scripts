@@ -32,6 +32,7 @@ call vundle#begin()
 	Plugin 'kien/ctrlp.vim'
 	Plugin 'vim-airline/vim-airline'
 	Plugin 'vim-airline/vim-airline-themes'
+	Plugin 'taglist.vim'
 	" Plugin 'file:///home/weidaizi/vim_plugins/YouCompleteMe'
 	Plugin 'Valloric/YouCompleteMe'
 	Plugin 'altercation/vim-colors-solarized'
@@ -72,6 +73,9 @@ map <C-l> <C-W>l
 " NERDTree hotkey
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
+
+" taglist hotkey
+map <F11> :Tlist<CR>
 
 " YCM hotkey
 map <F12> :YcmCompleter GoToDeclaration<CR>
@@ -118,3 +122,8 @@ else
 	let g:solarized_termcolors=256
 endif
 colorscheme solarized
+
+" taglist
+let Tlist_Show_One_File=1
+let Tlist_Exit_OnlyWindow=1
+let Tlist_Use_Right_Window=1
