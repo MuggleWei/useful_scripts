@@ -36,6 +36,7 @@ call vundle#begin()
 	" Plugin 'file:///home/weidaizi/vim_plugins/YouCompleteMe'
 	Plugin 'Valloric/YouCompleteMe'
 	Plugin 'altercation/vim-colors-solarized'
+	Plugin 'fatih/vim-go'
 
 	" All of your Plugins must be added before the following line
 	call vundle#end()            " required
