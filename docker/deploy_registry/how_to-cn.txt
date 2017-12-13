@@ -1,0 +1,2 @@
+[生成docker私有仓库]
+运行 auto_deploy_registry.sh ip_addr host-name 将生成一个docker registry，并生成 client 自动脚本包。在要使用此私有仓库的机器中，运行client中的脚本，之后便可以直接使用 docker pull host-name/repo 来拉取私有库中的image
