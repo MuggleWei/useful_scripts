@@ -1,0 +1,18 @@
+[gitlab配置]
+1. 确保docker已经安装
+2. 运行 install_gitlab_in_docker.sh
+
+[用户配置]
+1. 在gitlab中，配置ssh
+例如: 
+运行 ssh-keygen -t rsa -f gitlab-mugglewei, 生成公钥私钥
+将生成的公钥内容粘贴进gitlab->settings->ssh keys
+私钥复制到 ~/.ssh 下
+2. 在本地的ssh config中进行配置
+例如:
+Host muggle.gitlab.com
+	HostName 192.168.0.104
+	Port 5022
+	User git
+	IdentityFile ~/.ssh/gitlab-mugglewei
+由于我在安装时，指定了hostname，所以在ssh配置中，要显示的指定地址，其次注意端口号，由于我在docker里，指定了ssh的端口，这里要保持一致
