@@ -1,0 +1,9 @@
+[gitlab-runner配置]
+1. 确保gitlab-runner正确在环境中正确安装
+2. 若是如本git库中那样，docker/deploy_registry中那样配置了私有库的话，需要运行一下生成的client脚本
+3. 修改example-register中的参数
+url: gitlab中的项目url(project->settings->CI/CD->Runners settings)
+registration-token: gitlab中的token(寻找方法同上)
+docker-extra-hosts: 如有需要打成docker镜像并上传，在这里配置下docker registry的地址
+4. 运行脚本，便可注册runner
+5. 在example中，有简单的例子，里面包含了gitlab-ci.yml和Dockerfile

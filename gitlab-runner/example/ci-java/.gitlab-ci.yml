@@ -1,0 +1,22 @@
+stages:
+    - build
+    - test
+    - build_image
+
+build:
+    stage: build
+    script:
+        - mvn compile
+
+test:
+    stage: test
+    script:
+        - mvn test
+
+build_image:
+    stage: build_image
+    script:
+        - mvn package
+        - docker build -t ci-java .
+        - docker tag ci-java muggle.docker.com/ci-java
+        - docker push muggle.docker.com/ci-java
