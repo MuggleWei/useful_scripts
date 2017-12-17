@@ -1,0 +1,1 @@
+此脚本用于构建jdk, 需要先将Dockerfile中指定版本的jdk下载到resources目录中, 接着运行build.sh即可
