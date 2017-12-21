@@ -1,0 +1,20 @@
+{
+    "server":"0.0.0.0",
+    "local_address": "127.0.0.1",
+    "local_port":1080,
+    "timeout":300,
+    "method":"aes-256-cfb",
+    "fast_open": false,
+    "port_password":
+    {
+        "6666": "password1",
+		"6667": "password2",
+		"6668": "password3"
+    },
+    "_comment":
+    {
+        "6666": "user1",
+		"6667": "user2",
+		"6668": "user3"
+    }
+}
