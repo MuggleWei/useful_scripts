@@ -63,6 +63,9 @@ set cindent
 set incsearch
 set cursorline
 
+" utf-8
+set encoding=utf-8
+
 " hotkey
 
 " Smart way to move between windows
