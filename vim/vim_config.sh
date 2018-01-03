@@ -2,6 +2,7 @@
 
 # copy .vimrc
 cp -f .vimrc ~/.vimrc
+cp -rf ftplugin ~/.vim/ 
 
 # git clone vundle
 if [ ! -e ~/.vim/bundle/Vundle.vim ]; then
@@ -11,7 +12,7 @@ fi
 # Plugin Install
 vim +PluginInstall +qall
 
-# for taglist 
+# for taglist and tagbar
 sudo apt-get install exuberant-ctags
 
 # powerline fonts

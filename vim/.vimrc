@@ -36,7 +36,9 @@ call vundle#begin()
 	" Plugin 'file:///home/weidaizi/vim_plugins/YouCompleteMe'
 	Plugin 'Valloric/YouCompleteMe'
 	Plugin 'altercation/vim-colors-solarized'
+
 	Plugin 'fatih/vim-go'
+	Plugin 'majutsushi/tagbar'
 
 	" All of your Plugins must be added before the following line
 	call vundle#end()            " required
@@ -76,20 +78,16 @@ map <C-l> <C-W>l
 
 " NERDTree hotkey
 map <C-n> :NERDTreeToggle<CR>
+map <F3>  :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
 " taglist hotkey
 map <F11> :Tlist<CR>
 
-" YCM hotkey
-map <F12> :YcmCompleter GoToDeclaration<CR>
-map <C-F12> :YcmCompleter GoToDefinition<CR>
+" tagbar hotkey
+nmap <F8> :TagbarToggle<CR>
 
 " plugin configure
-
-" YCM
-" the statement below will bad for -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
-" let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
 " ctrlp
 set wildignore+=build/*,*.so,*.swp,*.zip
@@ -127,12 +125,7 @@ else
 endif
 colorscheme solarized
 
-" taglist
+" taglist config
 let Tlist_Show_One_File=1
 let Tlist_Exit_OnlyWindow=1
 let Tlist_Use_Right_Window=1
-
-" go
-let g:go_fmt_command = "goimports"
-map <F7> :GoBuild<CR>
-map <F5> :GoRun<CR>
