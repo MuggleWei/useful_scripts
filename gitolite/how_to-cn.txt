@@ -25,3 +25,8 @@ git clone git@muggle.gitolite.com:gitolite-admin
 此时进入此目录，结构如下
 conf: 用于管理成员
 keydir: 用于存放公钥
+
+
+[坑]
+之前搞过gitosis，之所以还要搞gitolite，因为在云上，发现跑gitosis，下admin时，一直没权限。
+最后才发现，要在 sshd_config 里，设置下AllowUsers，再sudo service sshd restart一下就好了。
