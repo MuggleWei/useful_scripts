@@ -14,7 +14,8 @@ cd useful_scripts/gitolite
 本步骤结束之后，gitolite便配置完毕
 
 3. 此时可以在当前目录中，看到生成的公钥和私钥，将其移动到~/.ssh中，并配置config文件，例如：
-host muggle.gitolite.com                                                                                                            	HostName 127.0.0.1
+host muggle.gitolite.com
+	HostName 127.0.0.1
 	Port 22
 	IdentityFile ~/.ssh/git
 
