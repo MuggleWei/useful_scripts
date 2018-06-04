@@ -1,0 +1,26 @@
+[服务器配置]
+1. 安装git
+sudo apt-get install git
+
+2. 下载自动配置脚本并运行
+git clone https://github.com/MuggleWei/useful_scripts.git
+
+clone完毕之后，进入目录
+cd useful_scripts/gitolite
+
+运行配置脚本，一路下来 y 或者 直接回车，注意，我这里生成了git用户，可以改叫其他名字
+./setup.sh git
+
+本步骤结束之后，gitolite便配置完毕
+
+3. 此时可以在当前目录中，看到生成的公钥和私钥，将其移动到~/.ssh中，并配置config文件，例如：
+host muggle.gitolite.com                                                                                                            	HostName 127.0.0.1
+	Port 22
+	IdentityFile ~/.ssh/git
+
+4. 经过上面的配置之后，就可以拉取管理库了
+git clone git@muggle.gitolite.com:gitolite-admin
+
+此时进入此目录，结构如下
+conf: 用于管理成员
+keydir: 用于存放公钥
