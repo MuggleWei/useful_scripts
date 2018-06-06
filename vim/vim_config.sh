@@ -2,7 +2,7 @@
 
 # copy .vimrc
 cp -f .vimrc ~/.vimrc
-cp -rf ftplugin ~/.vim/ 
+cp -rf ftplugin ~/.vim/ftplugin 
 
 # git clone vundle
 if [ ! -e ~/.vim/bundle/Vundle.vim ]; then
