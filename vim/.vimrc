@@ -68,6 +68,9 @@ set cursorline
 " utf-8
 set encoding=utf-8
 
+" close error bells
+set vb t_vb=
+
 " hotkey
 
 " Smart way to move between windows
