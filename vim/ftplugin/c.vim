@@ -10,3 +10,9 @@ map <F12> :YcmCompleter GoToDefinition<CR>
 " YCM config
 " the statement below will bad for -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
 " let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+
+" easy-align, Aligning C-style variable definition
+let g:easy_align_delimiters['d'] = {
+  \ 'pattern': ' \ze\S\+\s*[;=]',
+  \ 'left_margin': 0, 'right_margin': 0
+  \ }
