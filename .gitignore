@@ -4,3 +4,6 @@
 
 # vscode
 .vscode
+
+# gitosis build
+/gitosis/gitosis

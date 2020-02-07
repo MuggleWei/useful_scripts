@@ -36,6 +36,7 @@ call vundle#begin()
 	" Plugin 'file:///home/weidaizi/vim_plugins/YouCompleteMe'
 	Plugin 'Valloric/YouCompleteMe'
 	Plugin 'altercation/vim-colors-solarized'
+	Plugin 'junegunn/vim-easy-align'
 
 	Plugin 'fatih/vim-go'
 	Plugin 'majutsushi/tagbar'
@@ -86,6 +87,10 @@ let NERDTreeShowHidden=1
 
 " taglist hotkey
 map <F11> :Tlist<CR>
+
+" easy-align hotkey
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 " tagbar hotkey
 nmap <F8> :TagbarToggle<CR>
