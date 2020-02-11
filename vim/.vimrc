@@ -83,6 +83,7 @@ map <C-l> <C-W>l
 " NERDTree hotkey
 map <C-n> :NERDTreeToggle<CR>
 map <F3>  :NERDTreeToggle<CR>
+map <C-m> :NERDTreeFind<CR>
 let NERDTreeShowHidden=1
 
 " taglist hotkey
