@@ -16,3 +16,13 @@ let g:easy_align_delimiters['d'] = {
   \ 'pattern': ' \ze\S\+\s*[;=]',
   \ 'left_margin': 0, 'right_margin': 0
   \ }
+
+
+" clangd
+" NOTE:
+" I put this setting in .vimrc, lead "ValueError: No semantic completer exists for filetypes: ['cpp']"
+" then I put in this, everything work well
+" Let clangd fully control code completion
+let g:ycm_clangd_uses_ycmd_caching = 0
+" Use installed clangd, not YCM-bundled clangd which doesn't get updates.
+let g:ycm_clangd_binary_path = exepath("clangd")

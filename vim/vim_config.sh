@@ -2,7 +2,8 @@
 
 # copy .vimrc
 cp -f .vimrc ~/.vimrc
-cp -rf ftplugin ~/.vim/ftplugin 
+mkdir -p ~/.vim/ftplugin
+cp -rf ftplugin/* ~/.vim/ftplugin/
 
 # git clone vundle
 if [ ! -e ~/.vim/bundle/Vundle.vim ]; then
@@ -25,4 +26,13 @@ rm -rf fonts
 # YCM
 sudo apt-get install build-essential cmake
 sudo apt-get install python-dev python3-dev
-~/.vim/bundle/YouCompleteMe/install.py --clang-completer
+
+# ~/.vim/bundle/YouCompleteMe/install.py --clang-completer
+cd ~/.vim/bundle/YouCompleteMe
+python3 install.py --clangd-completer --go-completer
+
+# clangd
+# see: https://clangd.llvm.org/installation.html
+# install clangd, and use clangd recommend changing YCM's default settings(see clangd section in ftplugin/c.vim)
+sudo apt-get install clangd-9
+sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-9 100
