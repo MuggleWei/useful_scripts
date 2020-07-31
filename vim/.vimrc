@@ -27,19 +27,29 @@ call vundle#begin()
 	" " different version somewhere else.
 	" Plugin 'ascenator/L9', {'name': 'newL9'}
 	
-	" Plugin on GitHub repo
+	" ============== navigation ==============
 	Plugin 'scrooloose/nerdTree'
+	Plugin 'taglist.vim'
+	Plugin 'majutsushi/tagbar'
 	Plugin 'kien/ctrlp.vim'
+
+	" ============== color and theme ==============
 	Plugin 'vim-airline/vim-airline'
 	Plugin 'vim-airline/vim-airline-themes'
-	Plugin 'taglist.vim'
-	" Plugin 'file:///home/weidaizi/vim_plugins/YouCompleteMe'
-	Plugin 'Valloric/YouCompleteMe'
 	Plugin 'altercation/vim-colors-solarized'
+
+	" ============== code format ==============
 	Plugin 'junegunn/vim-easy-align'
 
+	" ============== complete ==============
+	" Plugin 'file:///home/weidaizi/vim_plugins/YouCompleteMe'
+	Plugin 'Valloric/YouCompleteMe'
+
+	" ============== golang ==============
 	Plugin 'fatih/vim-go'
-	Plugin 'majutsushi/tagbar'
+
+	" ============== python ==============
+	Plugin 'python-mode/python-mode'
 
 	" All of your Plugins must be added before the following line
 	call vundle#end()            " required
@@ -81,9 +91,16 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " NERDTree hotkey
-map <C-n> :NERDTreeToggle<CR>
+map <c-n> :NERDTreeToggle<CR>
 map <F3>  :NERDTreeToggle<CR>
-map <C-m> :NERDTreeFind<CR>
+" don't use ctrl+m, it will trigger wield behavior
+" Ctrl+I = Tab
+" Ctrl+J = Newline
+" Ctrl+M = Enter
+" Ctrl+[ = Escape
+" see: https://github.com/preservim/nerdtree/issues/761
+" map <C-m> :NERDTreeFind<CR>
+map <c-b> :NERDTreeFind<CR>
 let NERDTreeShowHidden=1
 
 " taglist hotkey
