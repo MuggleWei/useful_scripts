@@ -82,6 +82,9 @@ set encoding=utf-8
 " close error bells
 set vb t_vb=
 
+" relative line number
+set relativenumber
+
 " hotkey
 
 " Smart way to move between windows
