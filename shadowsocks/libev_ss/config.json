@@ -1,0 +1,8 @@
+{
+    "server":"0.0.0.0",
+    "server_port":12356,
+    "local_port":1080,
+    "password":"a9d981rnj13492&*()#$H&)",
+    "timeout":60,
+    "method":"chacha20-ietf-poly1305"
+}
