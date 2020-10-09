@@ -43,7 +43,9 @@ call vundle#begin()
 
 	" ============== complete ==============
 	" Plugin 'file:///home/weidaizi/vim_plugins/YouCompleteMe'
-	Plugin 'Valloric/YouCompleteMe'
+	" Plugin 'Valloric/YouCompleteMe'
+	" Cause latest vim version requires Vim 8.1.2269+, limit YouCompleteMe version
+	Plugin 'Valloric/YouCompleteMe', { 'commit':'d98f896' }
 
 	" ============== golang ==============
 	Plugin 'fatih/vim-go'
