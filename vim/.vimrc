@@ -166,3 +166,6 @@ endif
 
 " close cursor line number underline
 highlight CursorLineNr cterm=bold
+
+" make backspace work
+set backspace=indent,eol,start
