@@ -163,3 +163,6 @@ let Tlist_Use_Right_Window=1
 if !exists('g:easy_align_delimiters')
 	let g:easy_align_delimiters = {}
 endif
+
+" close cursor line number underline
+highlight CursorLineNr cterm=bold
