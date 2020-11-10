@@ -32,6 +32,6 @@ env LD_PRELOAD="$libprofiler_path" CPUPROFILE=$exe_name.prof $exe_path
 
 # generate output
 echo "generate callgrind"
-pprof --callgrind $exe_path $exe_name.prof $exe_name.callgrind
+pprof --callgrind $exe_path $exe_name.prof > $exe_name.callgrind
 echo "generate txt"
 pprof --text $exe_path $exe_name.prof > $exe_name.prof.txt
