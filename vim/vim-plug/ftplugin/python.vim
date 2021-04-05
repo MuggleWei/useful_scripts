@@ -7,6 +7,8 @@ set expandtab
 
 " python-mode
 let g:pymode = 1
+" let g:pymode_lint_ignore=["E501","W"]
+let g:pymode_lint_ignore=["E501"]
 
 " jedi-vim
 let g:jedi#goto_definitions_command = "gd"
