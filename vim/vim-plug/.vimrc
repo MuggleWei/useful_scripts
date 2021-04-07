@@ -19,6 +19,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'altercation/vim-colors-solarized'
+	Plug 'joshdick/onedark.vim'
 
     " ============== code format ==============
     Plug 'junegunn/vim-easy-align'
@@ -119,6 +120,7 @@ if !has('gui_running')
   set t_Co=256
 endif
 
+" colorscheme
 syntax enable
 if has('gui_running')
 	set background=light
