@@ -8,5 +8,11 @@
 # cmake build
 build/
 
+# YCM file
+compile_commands.json
+
 # gitosis build
 /gitosis/gitosis
+
+# clangd
+.clangd

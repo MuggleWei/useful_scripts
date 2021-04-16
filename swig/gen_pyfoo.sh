@@ -22,6 +22,7 @@ make
 
 # copy pyfoo and foo
 cd ../..
+rm -rf build
 mkdir build
 cp pyfoo/build/pyfoo/pyfoo.py build/
 cp pyfoo/build/foo/lib/libfoo.so build/
