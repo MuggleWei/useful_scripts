@@ -1,4 +1,4 @@
-%module(directors="1") pyfoo
+%module(directors="1", "threads"=1) pyfoo
 %{
 #include "foo.h"
 %}
