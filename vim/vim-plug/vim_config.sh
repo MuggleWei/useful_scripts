@@ -11,6 +11,9 @@ echo "install vim-plug"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+# without this, make vim-pydocstring will failed
+sudo apt-get install python3-venv
+
 # Plugin install
 echo "install plugins"
 vim +PlugInstall +qall

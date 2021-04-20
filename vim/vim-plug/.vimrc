@@ -14,7 +14,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-scripts/taglist.vim'
     Plug 'majutsushi/tagbar'
     Plug 'kien/ctrlp.vim'
-    
+ 
     " ============== color and theme ==============
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
@@ -24,6 +24,12 @@ call plug#begin('~/.vim/plugged')
     " ============== code format ==============
     Plug 'junegunn/vim-easy-align'
 	Plug 'scrooloose/nerdcommenter'
+	Plug 'vim-scripts/DoxygenToolkit.vim'
+	Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
+
+	" ============== snippets ==============
+	Plug 'sirver/ultisnips'
+	Plug 'honza/vim-snippets'
 
 	" ============== complete ==============
 	Plug 'valloric/youcompleteme', { 'branch': 'legacy-c++11' }
@@ -146,6 +152,30 @@ let g:NERDCustomDelimiters = {
   \ 'cpp':{'left': '//\ '}
   \ }
 
+" DoxygenToolkit use default
+" " DoxygenToolkit
+" let g:DoxygenToolkit_briefTag_pre="@Synopsis  "
+" let g:DoxygenToolkit_paramTag_pre="@Param "
+" let g:DoxygenToolkit_returnTag="@Returns   "
+" let g:DoxygenToolkit_blockHeader="-------------------------------"
+" let g:DoxygenToolkit_blockFooter="---------------------------------"
+" let g:DoxygenToolkit_authorName="Mathias Lorente"
+" let g:DoxygenToolkit_licenseTag="My own license" <-- !!! Does not end with "\<enter>"
+
+" vim-pydocstring
+let g:pydocstring_formatter="sphinx"
+
+" ultisnips
+" Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
+" - https://github.com/Valloric/YouCompleteMe
+" - https://github.com/nvim-lua/completion-nvim
+let g:UltiSnipsExpandTrigger="<c-e>"
+let g:UltiSnipsJumpForwardTrigger="<c-e>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsEditSplit="vertical"
+
+let g:ultisnips_python_style="sphinx"
+
 """""""""""""""""""""""""""""""""""""
 " other
 
@@ -159,5 +189,5 @@ set vb t_vb=
 set backspace=indent,eol,start
 
 " close cursor line number underline
-highlight CursorLineNr cterm=bold 
+highlight CursorLineNr cterm=bold
 
