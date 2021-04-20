@@ -12,3 +12,6 @@ let g:pymode_lint_ignore=["E501"]
 
 " jedi-vim
 let g:jedi#goto_definitions_command = "<F12>"
+
+" docstring
+map <c-s> :Pydocstring<CR>

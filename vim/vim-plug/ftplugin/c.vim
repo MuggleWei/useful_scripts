@@ -19,6 +19,8 @@ let g:easy_align_delimiters['d'] = {
   \ 'left_margin': 0, 'right_margin': 0
   \ }
 
+" docstring
+map <c-s> :Dox<CR>
 
 " clangd
 " NOTE:
