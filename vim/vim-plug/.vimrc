@@ -147,9 +147,10 @@ endif
 " nerdcommenter
 nmap <C-/> <plug>NERDCommenterToggle
 xmap <C-/> <plug>NERDCommenterToggle
+let g:NERDDefaultAlign = 'left'
 let g:NERDCustomDelimiters = {
-  \ 'c':{'left': '//\ '},
-  \ 'cpp':{'left': '//\ '}
+  \ 'c':{'left': '// '},
+  \ 'cpp':{'left': '// '}
   \ }
 
 " DoxygenToolkit use default
