@@ -23,6 +23,7 @@ call plug#begin('~/.vim/plugged')
 
     " ============== code format ==============
     Plug 'junegunn/vim-easy-align'
+	Plug 'scrooloose/nerdcommenter'
 
 	" ============== complete ==============
 	Plug 'valloric/youcompleteme', { 'branch': 'legacy-c++11' }
@@ -136,6 +137,14 @@ nmap ga <Plug>(EasyAlign)
 if !exists('g:easy_align_delimiters')
 	let g:easy_align_delimiters = {}
 endif
+
+" nerdcommenter
+nmap <C-/> <plug>NERDCommenterToggle
+xmap <C-/> <plug>NERDCommenterToggle
+let g:NERDCustomDelimiters = {
+  \ 'c':{'left': '//\ '},
+  \ 'cpp':{'left': '//\ '}
+  \ }
 
 """""""""""""""""""""""""""""""""""""
 " other
