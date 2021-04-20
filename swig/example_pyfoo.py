@@ -3,11 +3,11 @@ import build.pyfoo as pyfoo
 
 def get_cc_properties(cls):
     properties = {}
-    for attr in dir(bar):
-        if not callable(getattr(bar, attr)) and \
+    for attr in dir(cls):
+        if not callable(getattr(cls, attr)) and \
                 not attr.startswith("__") and \
                 not attr.startswith("this"):
-            properties[attr] = getattr(bar, attr)
+            properties[attr] = getattr(cls, attr)
     return properties
 
 
