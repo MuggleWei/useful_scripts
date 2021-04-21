@@ -145,12 +145,13 @@ if !exists('g:easy_align_delimiters')
 endif
 
 " nerdcommenter
-" In my ubuntu term, set ctrl+/ not working, but set ctrl+_ let ctrl+/ working
+nmap <C-/> <plug>NERDCommenterToggle
+xmap <C-/> <plug>NERDCommenterToggle
+" In my ubuntu term, set ctrl+/ not working, find same issue below
 " See issue: https://github.com/vim/vim/issues/6191
+" so use ctrl+_ replace of ctrl+/, and ctrl+/ working
 nmap <C-_> <plug>NERDCommenterToggle
 xmap <C-_> <plug>NERDCommenterToggle
-" nmap <C-/> <plug>NERDCommenterToggle
-" xmap <C-/> <plug>NERDCommenterToggle
 let g:NERDDefaultAlign = 'left'
 let g:NERDCustomDelimiters = {
   \ 'c':{'left': '// '},
