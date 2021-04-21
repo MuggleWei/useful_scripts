@@ -5,6 +5,8 @@ echo "initialize vim directory"
 cp -f .vimrc ~/.vimrc
 mkdir -p ~/.vim/ftplugin
 cp -rf ftplugin/* ~/.vim/ftplugin/
+mkdir -p ~/.vim/UltiSnips
+cp -rf UltiSnips/* ~/.vim/UltiSnips/
 
 # install vim-plug
 echo "install vim-plug"
