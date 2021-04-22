@@ -75,6 +75,9 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+" save file in insert mode and switch to normal mode
+imap <C-s> <esc>:w<CR>
+
 """""""""""""""""""""""""""""""""""""
 " Plug config
 
