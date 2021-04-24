@@ -25,7 +25,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/vim-easy-align'
 	Plug 'scrooloose/nerdcommenter'
 	Plug 'vim-scripts/DoxygenToolkit.vim'
-	Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
+	" Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 
 	" ============== snippets ==============
 	Plug 'sirver/ultisnips'
