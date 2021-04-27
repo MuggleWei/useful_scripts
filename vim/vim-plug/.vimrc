@@ -120,6 +120,7 @@ let g:ctrlp_user_command = 'find %s -type f'
 let g:Lf_IgnoreCurrentBufferName = 1
 let g:Lf_WindowPosition = 'popup'
 let g:Lf_PreviewInPopup = 1
+let g:Lf_ShowDevIcons = 0
 
 " airline
 "let g:airline_left_sep='>'
