@@ -14,6 +14,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-scripts/taglist.vim'
     Plug 'majutsushi/tagbar'
     Plug 'kien/ctrlp.vim'
+	Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
  
     " ============== color and theme ==============
     Plug 'vim-airline/vim-airline'
@@ -78,6 +79,10 @@ map <C-l> <C-W>l
 " save file in insert mode and switch to normal mode
 imap <C-s> <esc>:w<CR>
 
+" vim ignore file patterns
+" ctrlp, leaderf will use it
+set wildignore+=build/*,*.so,*.swp,*.zip
+
 """""""""""""""""""""""""""""""""""""
 " Plug config
 
@@ -104,13 +109,17 @@ let Tlist_Use_Right_Window=1
 map <F8> :TagbarToggle<CR>
 
 " ctrlp
-set wildignore+=build/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
 let g:ctrlp_user_command = 'find %s -type f'
+
+" LeaderF
+let g:Lf_IgnoreCurrentBufferName = 1
+let g:Lf_WindowPosition = 'popup'
+let g:Lf_PreviewInPopup = 1
 
 " airline
 "let g:airline_left_sep='>'
