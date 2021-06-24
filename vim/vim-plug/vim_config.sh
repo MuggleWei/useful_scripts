@@ -12,6 +12,14 @@ cp -rf UltiSnips/* ~/.vim/UltiSnips/
 echo "install vim-plug"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+if [ $? -eq 0 ]
+then
+	echo "success get plug.vim"
+else
+	echo "failed get plug.vim from remote, use local plug.vim"
+	mkdir -p ~/.vim/autoload/
+	cp plug.vim ~/.vim/autoload/
+fi
 
 # without this, make vim-pydocstring will failed
 sudo apt-get install python3-venv
@@ -30,11 +38,12 @@ cd fonts
 cd ..
 rm -rf fonts
 
-# clangd
-# see: https://clangd.llvm.org/installation.html
-# install clangd, and use clangd recommend changing YCM's default settings(see clangd section in ftplugin/c.vim)
-sudo apt-get install clangd-9
-sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-9 100
+# YCM already use clangd, don't need to manually install clangd
+# # clangd
+# # see: https://clangd.llvm.org/installation.html
+# # install clangd, and use clangd recommend changing YCM's default settings(see clangd section in ftplugin/c.vim)
+# sudo apt-get install clangd-9
+# sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-9 100
 
 # YCM
 sudo apt-get install build-essential cmake

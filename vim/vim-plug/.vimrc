@@ -33,7 +33,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'honza/vim-snippets'
 
 	" ============== complete ==============
-	Plug 'valloric/youcompleteme', { 'branch': 'legacy-c++11' }
+	" Plug 'valloric/youcompleteme', { 'branch': 'legacy-c++11' }
+	Plug 'valloric/youcompleteme'
 
 	" ============== golang ==============
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
