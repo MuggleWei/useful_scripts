@@ -196,6 +196,10 @@ let g:UltiSnipsEditSplit="vertical"
 
 let g:ultisnips_python_style="sphinx"
 
+" YCM
+" for see locationlist which can be opened with the :lopen and :lclose commands
+let g:ycm_always_populate_location_list = 1
+
 """""""""""""""""""""""""""""""""""""
 " other
 
