@@ -3,7 +3,7 @@
 * 下载java, maven, golang
 * 安装golang
 ```
-sudo rm -rf /usr/local/go && tar -C /usr/local -xzvf go${version}.linux-amd64.tar.gz
+sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzvf go${version}.linux-amd64.tar.gz
 ```
 * 安装java和maven
 ```
