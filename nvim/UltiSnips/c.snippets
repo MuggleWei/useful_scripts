@@ -1,0 +1,25 @@
+snippet myhead "My File Header" b
+/******************************************************************************
+ *  @file         `!p snip.rv = fn`
+ *  @author       Muggle Wei
+ *  @email        mugglewei@gmail.com
+ *  @date         `date +%Y-%m-%d`
+ *  @copyright    Copyright `date +%Y` Muggle Wei
+ *  @license      MIT License
+ *  @brief        ${2:${VISUAL}}
+ *****************************************************************************/
+${0}
+endsnippet
+
+
+snippet winexport "windows export macro" b
+#if WIN32 && defined($1_USE_DLL)
+	#ifdef $1_EXPORTS
+		#define $2_EXPORT __declspec(dllexport)
+	#else
+		#define $2_EXPORT __declspec(dllimport)
+	#endif
+#else
+	#define $2_EXPORT
+#endif  // $2_EXPORT
+endsnippet

@@ -25,6 +25,10 @@ call plug#begin(stdpath('data') . '/plugged')
 	" ============== syntax check ==============
 	" Plug 'scrooloose/syntastic'
 
+	" ============== snippets ==============
+	Plug 'sirver/ultisnips'
+	Plug 'honza/vim-snippets'
+
 	" ============== color and theme ==============
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
@@ -108,6 +112,9 @@ autocmd BufEnter * lua require'completion'.on_attach()
 
 let g:completion_enable_auto_popup = 1
 
+" possible value: 'UltiSnips', 'Neosnippet', 'vim-vsnip', 'snippets.nvim'
+let g:completion_enable_snippet = 'UltiSnips'
+
 " Use <Tab> and <S-Tab> to navigate through popup menu
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -184,6 +191,12 @@ let g:NERDCustomDelimiters = {
 " let g:syntastic_check_on_open = 1
 " let g:syntastic_check_on_wq = 0
 
+" ultisnips
+let g:UltiSnipsExpandTrigger="<c-e>"
+let g:UltiSnipsJumpForwardTrigger="<c-e>"
+let g:UltiSnipsEditSplit="vertical"
+
+let g:ultisnips_python_style="sphinx"
 
 """"""""""
 " airline

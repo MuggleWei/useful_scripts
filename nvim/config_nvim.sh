@@ -44,3 +44,7 @@ nvim +PlugInstall +qall
 # copy ftplugin
 mkdir -p ${nvim_cfg_path}/ftplugin
 cp -rf ftplugin/* ${nvim_cfg_path}/ftplugin/
+
+# copy snips
+mkdir -p ${nvim_cfg_path}/UltiSnips
+cp -rf UltiSnips/* ${nvim_cfg_path}/UltiSnips/
