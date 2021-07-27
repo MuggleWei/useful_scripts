@@ -38,6 +38,9 @@ call plug#begin(stdpath('data') . '/plugged')
 	" ============== python ==============
 	Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
+	" ============== golang ==============
+	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 call plug#end()
 
 
@@ -50,6 +53,7 @@ call plug#end()
 lua << EOF
 require'lspconfig'.clangd.setup{}
 require'lspconfig'.pylsp.setup{}
+require'lspconfig'.gopls.setup{}
 EOF
 
 lua << EOF
@@ -94,7 +98,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "clangd", "pylsp" }
+local servers = { "clangd", "pylsp", "gopls" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
