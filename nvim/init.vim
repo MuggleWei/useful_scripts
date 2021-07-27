@@ -11,6 +11,7 @@ call plug#begin(stdpath('data') . '/plugged')
 
     " ============== navigation ==============
 	Plug 'preservim/nerdtree'
+    Plug 'majutsushi/tagbar'
 
     " ============== color and theme ==============
 	Plug 'vim-airline/vim-airline'
@@ -22,10 +23,14 @@ call plug#end()
 
 
 """""""""""""""""""""""""""""""""""""
-" LSP
+" Plug config
+
+""""""""""
+" LSP & completion-nvim
 
 lua << EOF
 require'lspconfig'.clangd.setup{}
+require'lspconfig'.pylsp.setup{}
 EOF
 
 lua << EOF
@@ -62,12 +67,15 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
   buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 
+  -- completion-nvim on_attach here
+  require'completion'.on_attach(client, bufnr)
+
 end
 
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "clangd" }
+local servers = { "clangd", "pylsp" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
@@ -78,11 +86,12 @@ for _, lsp in ipairs(servers) do
 end
 EOF
 
-"""""""""""""""""""""""""""""""""""""
-" Plug config
-
+""""""""""
 " completion-nvim
-lua require'lspconfig'.clangd.setup{on_attach=require'completion'.on_attach}
+
+" don't config here, move to on_attach function
+" lua require'lspconfig'.clangd.setup{on_attach=require'completion'.on_attach}
+
 autocmd BufEnter * lua require'completion'.on_attach()
 
 let g:completion_enable_auto_popup = 1
@@ -98,11 +107,19 @@ set completeopt=menuone,noinsert,noselect
 set shortmess+=c
 
 
+""""""""""
 " NERDTree
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 let NERDTreeShowHidden=1
 
+
+""""""""""
+" tagbar
+map <F8> :TagbarToggle<CR>
+
+
+""""""""""
 " airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '

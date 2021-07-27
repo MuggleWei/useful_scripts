@@ -5,7 +5,7 @@
 
 # setup provider python3
 echo "install pynvim"
-python3 -m pip install --user --upgrade pynvim
+python3 -m pip install pynvim
 
 # set config path
 nvim_cfg_path=$HOME/.config/nvim
@@ -31,6 +31,8 @@ cp init.vim ${nvim_cfg_path}/
 
 sudo apt-get install clangd-9
 sudo ln -s clangd-9 /usr/bin/clangd
+
+python3 -m pip install python-lsp-server
 
 # Plugin install
 echo "install plugins"
