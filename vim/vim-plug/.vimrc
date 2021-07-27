@@ -69,6 +69,8 @@ set incsearch      " increase search
 
 set cursorline     " show cursor line
 
+set scrolloff=10   " scroll screen when n lines aways from top/bottom
+
 """""""""""""""""""""""""""""""""""""
 " hotkey
 

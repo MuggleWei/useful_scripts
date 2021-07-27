@@ -4,6 +4,7 @@
 # cp $repo/tmux/.tmux.conf ~/
 
 # setup provider python3
+echo "install pynvim"
 python3 -m pip install --user --upgrade pynvim
 
 # set config path
@@ -25,3 +26,16 @@ fi
 
 # copy init.vim
 cp init.vim ${nvim_cfg_path}/
+
+# install language server
+
+sudo apt-get install clangd-9
+sudo ln -s clangd-9 /usr/bin/clangd
+
+# Plugin install
+echo "install plugins"
+nvim +PlugInstall +qall
+
+# # copy ftplugin
+# mkdir -p ${nvim_cfg_path}/ftplugin
+# cp -rf ftplugin/* ${nvim_cfg_path}/ftplugin/
