@@ -41,6 +41,6 @@ sudo apt install fzf ripgrep universal-ctags silversearcher-ag fd-find
 echo "install plugins"
 nvim +PlugInstall +qall
 
-# # copy ftplugin
-# mkdir -p ${nvim_cfg_path}/ftplugin
-# cp -rf ftplugin/* ${nvim_cfg_path}/ftplugin/
+# copy ftplugin
+mkdir -p ${nvim_cfg_path}/ftplugin
+cp -rf ftplugin/* ${nvim_cfg_path}/ftplugin/

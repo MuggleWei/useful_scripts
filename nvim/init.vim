@@ -3,21 +3,29 @@
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin(stdpath('data') . '/plugged')
 
-    " ============== LSP ==============
+	" ============== LSP ==============
 	Plug 'neovim/nvim-lspconfig'
 
-    " ============== auto completion ==============
+	" ============== auto completion ==============
 	Plug 'nvim-lua/completion-nvim'
 
-    " ============== navigation ==============
+	" ============== navigation ==============
 	Plug 'preservim/nerdtree'
-    Plug 'majutsushi/tagbar'
+	Plug 'majutsushi/tagbar'
 
-    " ============== search ==============
+	" ============== search ==============
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 	Plug 'junegunn/fzf.vim'
 
-    " ============== color and theme ==============
+	" ============== code format ==============
+	Plug 'junegunn/vim-easy-align'
+	Plug 'scrooloose/nerdcommenter'
+	Plug 'vim-scripts/DoxygenToolkit.vim'
+
+	" ============== syntax check ==============
+	" Plug 'scrooloose/syntastic'
+
+	" ============== color and theme ==============
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'joshdick/onedark.vim'
@@ -130,6 +138,51 @@ nnoremap <leader>g :Rg<CR>
 nnoremap <leader>t :Tags<CR>
 
 let g:fzf_history_dir = '~/.local/share/fzf-history'
+
+""""""""""
+" easy-align
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+if !exists('g:easy_align_delimiters')
+	let g:easy_align_delimiters = {}
+endif
+
+""""""""""
+" nerdcommenter
+nmap <C-/> <plug>NERDCommenterToggle
+xmap <C-/> <plug>NERDCommenterToggle
+" In my ubuntu term, set ctrl+/ not working, find same issue below
+" See issue: https://github.com/vim/vim/issues/6191
+" so use ctrl+_ replace of ctrl+/, and ctrl+/ working
+nmap <C-_> <plug>NERDCommenterToggle
+xmap <C-_> <plug>NERDCommenterToggle
+let g:NERDDefaultAlign = 'left'
+let g:NERDCustomDelimiters = {
+  \ 'c':{'left': '// '},
+  \ 'cpp':{'left': '// '}
+  \ }
+
+" DoxygenToolkit use default
+" " DoxygenToolkit
+" let g:DoxygenToolkit_briefTag_pre="@Synopsis  "
+" let g:DoxygenToolkit_paramTag_pre="@Param "
+" let g:DoxygenToolkit_returnTag="@Returns   "
+" let g:DoxygenToolkit_blockHeader="-------------------------------"
+" let g:DoxygenToolkit_blockFooter="---------------------------------"
+" let g:DoxygenToolkit_authorName="Mathias Lorente"
+" let g:DoxygenToolkit_licenseTag="My own license" <-- !!! Does not end with "\<enter>"
+
+
+" """"""""""
+" " syntastic
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" 
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
 
 
 """"""""""
