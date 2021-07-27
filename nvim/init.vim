@@ -9,6 +9,12 @@ call plug#begin(stdpath('data') . '/plugged')
     " ============== navigation ==============
 	Plug 'preservim/nerdtree'
 
+    " ============== color and theme ==============
+	Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
+	Plug 'joshdick/onedark.vim'
+	Plug 'sheerun/vim-polyglot'
+
 call plug#end()
 
 
@@ -93,6 +99,8 @@ set cursorline     " show cursor line
 
 set scrolloff=10   " scroll screen when n lines aways from top/bottom
 
+set nohlsearch     " close highlight search
+
 """""""""""""""""""""""""""""""""""""
 " hotkey
 
@@ -113,6 +121,21 @@ set wildignore+=build/*,*.so,*.swp,*.zip
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 let NERDTreeShowHidden=1
+
+" airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'default'
+
+let g:airline_detect_modified=1
+let g:airline_detect_paste=1
+let g:airline_powerline_fonts = 1
+let g:airline_theme='dark'
+
+" colorscheme
+syntax enable
+colorscheme onedark
 
 """""""""""""""""""""""""""""""""""""
 " other
