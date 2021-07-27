@@ -13,6 +13,10 @@ call plug#begin(stdpath('data') . '/plugged')
 	Plug 'preservim/nerdtree'
     Plug 'majutsushi/tagbar'
 
+    " ============== search ==============
+	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+	Plug 'junegunn/fzf.vim'
+
     " ============== color and theme ==============
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
@@ -117,6 +121,15 @@ let NERDTreeShowHidden=1
 """"""""""
 " tagbar
 map <F8> :TagbarToggle<CR>
+
+""""""""""
+" FZF
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>g :Rg<CR>
+nnoremap <leader>t :Tags<CR>
+
+let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 
 """"""""""

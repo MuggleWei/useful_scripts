@@ -34,6 +34,9 @@ sudo ln -s clangd-9 /usr/bin/clangd
 
 python3 -m pip install python-lsp-server
 
+# fzf
+sudo apt install fzf ripgrep universal-ctags silversearcher-ag fd-find
+
 # Plugin install
 echo "install plugins"
 nvim +PlugInstall +qall
