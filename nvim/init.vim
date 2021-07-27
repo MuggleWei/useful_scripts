@@ -6,6 +6,9 @@ call plug#begin(stdpath('data') . '/plugged')
     " ============== LSP ==============
 	Plug 'neovim/nvim-lspconfig'
 
+    " ============== auto completion ==============
+	Plug 'nvim-lua/completion-nvim'
+
     " ============== navigation ==============
 	Plug 'preservim/nerdtree'
 
@@ -76,6 +79,44 @@ end
 EOF
 
 """""""""""""""""""""""""""""""""""""
+" Plug config
+
+" completion-nvim
+lua require'lspconfig'.clangd.setup{on_attach=require'completion'.on_attach}
+autocmd BufEnter * lua require'completion'.on_attach()
+
+let g:completion_enable_auto_popup = 1
+
+" Use <Tab> and <S-Tab> to navigate through popup menu
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Set completeopt to have a better completion experience
+set completeopt=menuone,noinsert,noselect
+
+" Avoid showing message extra message when using completion
+set shortmess+=c
+
+
+" NERDTree
+nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+let NERDTreeShowHidden=1
+
+" airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'default'
+
+let g:airline_detect_modified=1
+let g:airline_detect_paste=1
+let g:airline_powerline_fonts = 1
+let g:airline_theme='dark'
+
+
+"""""""""""""""""""""""""""""""""""""
+" filetype
 
 filetype plugin indent on
 
@@ -113,25 +154,6 @@ map <C-l> <C-W>l
 " vim ignore file patterns
 " ctrlp, leaderf will use it
 set wildignore+=build/*,*.so,*.swp,*.zip
-
-"""""""""""""""""""""""""""""""""""""
-" Plug config
-
-" NERDTree
-nnoremap <C-n> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
-let NERDTreeShowHidden=1
-
-" airline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline#extensions#tabline#formatter = 'default'
-
-let g:airline_detect_modified=1
-let g:airline_detect_paste=1
-let g:airline_powerline_fonts = 1
-let g:airline_theme='dark'
 
 " colorscheme
 syntax enable
