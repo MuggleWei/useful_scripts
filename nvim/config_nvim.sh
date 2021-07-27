@@ -4,8 +4,10 @@
 # cp $repo/tmux/.tmux.conf ~/
 
 # setup provider python3
+sudo apt-get install python3-pip
+
 echo "install pynvim"
-python3 -m pip install pynvim
+python3 -m pip install --user --upgrade pynvim
 
 # set config path
 nvim_cfg_path=$HOME/.config/nvim
@@ -32,7 +34,7 @@ cp init.vim ${nvim_cfg_path}/
 sudo apt-get install clangd-9
 sudo ln -s clangd-9 /usr/bin/clangd
 
-python3 -m pip install python-lsp-server
+python3 -m pip install --user --upgrade python-lsp-server
 
 # fzf
 sudo apt install fzf ripgrep universal-ctags silversearcher-ag fd-find
