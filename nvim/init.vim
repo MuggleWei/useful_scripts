@@ -35,6 +35,9 @@ call plug#begin(stdpath('data') . '/plugged')
 	Plug 'joshdick/onedark.vim'
 	Plug 'sheerun/vim-polyglot'
 
+	" ============== python ==============
+	Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+
 call plug#end()
 
 
