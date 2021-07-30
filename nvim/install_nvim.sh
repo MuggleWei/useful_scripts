@@ -13,6 +13,9 @@ sudo apt-get install ninja-build gettext libtool libtool-bin autoconf automake c
 # export https_proxy=socks5://127.0.0.1:1080
 # git config --global http.proxy 'socks5://127.0.0.1:1080'
 # git config --global https.proxy 'socks5://127.0.0.1:1080'
+# 
+# NOTE: maybe need set hosts in /etc/hosts in some situation
+# 151.101.0.133 raw.githubusercontent.com
 make CMAKE_BUILD_TYPE=Release
 
 # Install
