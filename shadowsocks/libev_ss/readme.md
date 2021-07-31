@@ -11,7 +11,7 @@
 ### shadowsocks client config(new)
 * install
 ```
-* in outside machine(e.g. hk/jp/us) clone shadowsocks-libev repo
+* in outside machine(e.g. hk/jp/us) clone shadowsocks-libev repo(git clone https://github.com/shadowsocks/shadowsocks-libev.git)
 * copy ss_libev_build.sh and ss_libev_prepare.sh into repo
 * run ss_libev_prepare.sh
 * zip repo and send to inside machine

@@ -44,5 +44,10 @@ ssh -p 10102 buser@localhost
 ```
 * 断线问题
 ```
-直接使用ssh命令会出现断线问题, 推荐直接使用脚本调用ssh来断线重连
+使用autossh
+autossh -M 10000 -NR 10102:localhost:22 mugglewei@xxx.xxx.xxx.xxx -o TCPKeepAlive=yes -o ServerAliveInterval=15 -o ServerAliveCountMax=3
+-M: 端口监视连接状态, 连接有问题时就会自动重连
+-o TCPKeepAlive=yes: 设置TCP keep alive
+-o ServerAliveInterval=15: 发送alive消息的时间间隔
+-o ServerAliveCountMax=3: 允许最大没有接收到alive消息到次数
 ```
