@@ -1,0 +1,8 @@
+snippet middleware "http middleware" b
+func ${1:middleware}(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		${2:${VISUAL}}
+		next.ServeHTTP(w, r)
+	})
+}
+endsnippet
