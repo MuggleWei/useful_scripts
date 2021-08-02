@@ -134,6 +134,9 @@ set completeopt=menuone,noinsert,noselect
 " Avoid showing message extra message when using completion
 set shortmess+=c
 
+" set completion confirm key 
+" without this, will stuck when enter <cr> without selected in popup
+let g:completion_confirm_key = "\<C-y>"
 
 """"""""""
 " NERDTree
