@@ -27,6 +27,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'scrooloose/nerdcommenter'
 	Plug 'vim-scripts/DoxygenToolkit.vim'
 	" Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
+	Plug 'chun-yang/auto-pairs'
 
 	" ============== snippets ==============
 	Plug 'sirver/ultisnips'
