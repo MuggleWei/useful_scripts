@@ -21,7 +21,7 @@ call plug#begin(stdpath('data') . '/plugged')
 	Plug 'junegunn/vim-easy-align'
 	Plug 'scrooloose/nerdcommenter'
 	Plug 'vim-scripts/DoxygenToolkit.vim'
-	Plug 'chun-yang/auto-pairs'
+	Plug 'jiangmiao/auto-pairs'
 
 	" ============== syntax check ==============
 	" Plug 'scrooloose/syntastic'
