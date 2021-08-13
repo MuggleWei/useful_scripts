@@ -186,6 +186,14 @@ let g:NERDCustomDelimiters = {
 " let g:DoxygenToolkit_authorName="Mathias Lorente"
 " let g:DoxygenToolkit_licenseTag="My own license" <-- !!! Does not end with "\<enter>"
 
+" auto-pairs
+let g:AutoPairsFlyMode = 1
+let g:AutoPairsShortcutToggle = ''
+" exclude pair: \" \"
+"let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '```':'```', '"""':'"""', "'''":"'''", "`":"`"}
+let g:AutoPairs = {'(':')', '[':']', '{':'}', "'":"'", '```':'```', '"""':'"""', "'''":"'''", "`":"`"}
+
+
 " vim-pydocstring
 let g:pydocstring_formatter="sphinx"
 
