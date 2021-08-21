@@ -21,7 +21,10 @@ func main() {
 		Handler: mux,
 	}
 	// server.ListenAndServe()
-	server.ListenAndServeTLS("server.crt", "server.key")
+	err := server.ListenAndServeTLS("../build/domain.crt", "../build/domain.key")
+	if err != nil {
+		fmt.Println(err)
+	}
 }
 
 func index(w http.ResponseWriter, r *http.Request) {

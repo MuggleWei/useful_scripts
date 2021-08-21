@@ -62,7 +62,7 @@ openssl req \
     -out domain.csr
 ```
 其中:
-* 若不想交互式回答, 可加入-subj选项
+* 若不想交互式回答, 可加入-subj选项 或 使用openssl.cnf
 * -newkey rsa:2048 指定密钥为2048位, 使用RSA算法
 * -nodes 指定私钥没有用密码加密
 * -new 被隐式包含, 表示一个CSR将被生成
