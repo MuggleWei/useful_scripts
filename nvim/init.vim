@@ -33,6 +33,7 @@ call plug#begin(stdpath('data') . '/plugged')
 	" ============== color and theme ==============
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
+    Plug 'altercation/vim-colors-solarized'
 	Plug 'joshdick/onedark.vim'
 	Plug 'sheerun/vim-polyglot'
 
@@ -272,7 +273,14 @@ set wildignore+=build/*,*.so,*.swp,*.zip
 
 " colorscheme
 syntax enable
-colorscheme onedark
+"colorscheme onedark
+if has('gui_running')
+	set background=light
+else
+	set background=dark
+	let g:solarized_termcolors=256
+endif
+colorscheme solarized
 
 """""""""""""""""""""""""""""""""""""
 " other
