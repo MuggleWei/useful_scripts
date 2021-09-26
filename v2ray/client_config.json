@@ -1,0 +1,39 @@
+{
+	"log": {
+		"loglevel": "info",
+		"access": "./v2ray_info.log",
+		"error": "./v2ray_error.log"
+	},
+	"inbounds": [
+		{
+			"port": 1081,
+			"protocol": "socks",
+			"sniffing": {
+				"enabled": true,
+				"destOverride": ["http", "tls"]
+			},
+			"settings": {
+				"auth": "noauth"
+			}
+		}
+	],
+	"outbounds": [
+		{
+			"protocol": "vmess",
+			"settings": {
+				"vnext": [
+					{
+						"address": "xxx.xxx.xxx.xxx",
+						"port": 16823,
+						"users": [
+							{
+								"id": "和server_config.json中到client id保持一致",
+								"alterId": 64
+							}
+						]
+					}
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,28 @@
+{
+	"log": {
+		"loglevel": "warning",
+		"access": "./v2ray_info.log",
+		"error": "./v2ray_error.log"
+	},
+	"inbounds": [
+		{
+			"port": 16823,
+			"protocol": "vmess",
+			"settings": {
+				"clients": [
+					{
+						"id": "生成uuid, 使用python3: >> import uuid | >> uuid.uuid4()",
+						"alterId": 64
+					}
+				]
+			}
+		}
+	],
+	"outbounds": [
+		{
+			"protocol": "freedom",
+			"settings": {}
+		}
+	]
+}
+
