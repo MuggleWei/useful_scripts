@@ -267,6 +267,10 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+" save
+nmap <C-s> :w!<CR>
+imap <C-s> <Esc>:w!<CR>
+
 " vim ignore file patterns
 " ctrlp, leaderf will use it
 set wildignore+=build/*,*.so,*.swp,*.zip

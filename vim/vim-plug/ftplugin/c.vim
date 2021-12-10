@@ -20,7 +20,7 @@ let g:easy_align_delimiters['d'] = {
   \ }
 
 " docstring
-map <c-s> :Dox<CR>
+map <leader>d :Dox<CR>
 
 " " clangd
 " " NOTE:

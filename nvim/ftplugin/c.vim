@@ -12,4 +12,4 @@ let g:easy_align_delimiters['d'] = {
   \ }
 
 " DoxygenToolkit, docstring
-map <c-s> :Dox<CR>
+map <leader>d :Dox<CR>

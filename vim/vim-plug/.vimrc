@@ -82,7 +82,8 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " save file in insert mode and switch to normal mode
-imap <C-s> <esc>:w<CR>
+nmap <C-s> :w!<CR>
+imap <C-s> <Esc>:w!<CR>
 
 " vim ignore file patterns
 " ctrlp, leaderf will use it
