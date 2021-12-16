@@ -34,7 +34,8 @@ cp init.vim ${nvim_cfg_path}/
 sudo apt-get install clangd-9
 sudo ln -s clangd-9 /usr/bin/clangd
 
-python3 -m pip install --user --upgrade python-lsp-server
+#python3 -m pip install --user --upgrade python-lsp-server[all]
+python3 -m pip install --user --upgrade pyright
 
 # fzf
 sudo apt install fzf ripgrep universal-ctags silversearcher-ag fd-find
