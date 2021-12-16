@@ -271,6 +271,9 @@ map <C-l> <C-W>l
 nmap <C-s> :w!<CR>
 imap <C-s> <Esc>:w!<CR>
 
+" new line in insert mode
+imap <S-o> <Esc>o
+
 " vim ignore file patterns
 " ctrlp, leaderf will use it
 set wildignore+=build/*,*.so,*.swp,*.zip
