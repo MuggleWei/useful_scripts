@@ -40,9 +40,9 @@ go env -w GOPRIVATE=*.${私有库地址}  # 排除私有库
 ```
 搜索 阿里/腾讯/清华 对应的镜像源
 ```
-* 安装python3-pip以及设置源
+* 安装python3常用组件以及设置源
 ```
-sudo apt-get install python3-pip
+sudo apt-get install -y python3-pip python3-venv
 python3 -m pip install pip -U
 python3 -m pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 ```
