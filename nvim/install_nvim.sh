@@ -28,4 +28,4 @@ sudo make install
 ####################################
 # NOTE: 
 # sometimes build will failed in some location cause download failed
-# maybe need to compile in A machine and copy to dst machine
+# maybe need to compile in A machine and copy to dst machine.

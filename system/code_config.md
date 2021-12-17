@@ -21,6 +21,10 @@ export MAVEN_HOME=/opt/apache-maven-${version}
 export NODE_HOME=/opt/node-${version}-linux-x64
 export PATH=/usr/local/go/bin:$JAVA_HOME/bin:$MAVEN_HOME/bin:$NODE_HOME/bin:$PATH
 ```
+* 将用户目录的bin在~/.bashrc中加入path中(python3默认的脚本安装路径是这个, 安装python的langserver会用到)
+```
+export PATH=$PATH:$HOME/.local/bin
+```
 * (可选)配置用户go可执行文件, 在~/.bashrc中增加
 ```
 export GOPATH=~/go
@@ -31,6 +35,16 @@ export PATH=$PATH:$GOPATH/bin
 go env -w GO111MODULE=on
 go env -w GOPROXY=https://goproxy.cn,direct
 go env -w GOPRIVATE=*.${私有库地址}  # 排除私有库
+```
+* 设置软件源
+```
+搜索 阿里/腾讯/清华 对应的镜像源
+```
+* 安装python3-pip以及设置源
+```
+sudo apt-get install python3-pip
+python3 -m pip install pip -U
+python3 -m pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 * 安装vim和nvim以及插件
 ```
