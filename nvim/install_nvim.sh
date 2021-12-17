@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # clone neovim
-git clone https://github.com/neovim/neovim --branch=0.5.0 --depth=1
+git clone https://github.com/neovim/neovim --branch=0.6.0 --depth=1
 cd neovim
 
 # Build prerequisites
