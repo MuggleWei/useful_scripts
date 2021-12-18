@@ -48,6 +48,6 @@ nvim +PlugInstall +qall
 mkdir -p ${nvim_cfg_path}/ftplugin
 cp -rf ftplugin/* ${nvim_cfg_path}/ftplugin/
 
-# copy snips
-mkdir -p ${nvim_cfg_path}/UltiSnips
-cp -rf ../vim/vim-plug/UltiSnips/* ${nvim_cfg_path}/UltiSnips/
+# copy .vsnip
+mkdir -p $HOME/.vsnip
+cp -rf ./.vsnip/* $HOME/.vsnip/

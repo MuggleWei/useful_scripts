@@ -1,0 +1,13 @@
+{
+	"middleware": {
+		"prefix": "middleware",
+		"body": [
+			"func ${1:middleware}(next http.Handler) http.Handler {",
+			"\treturn http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {",
+			"\t\t${2}",
+			"\t\tnext.ServeHTTP(w, r)",
+			"\t})",
+			"}"
+		]
+	}
+}

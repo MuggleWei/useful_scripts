@@ -1,0 +1,30 @@
+{
+	"myhead": {
+		"prefix": "myhead",
+		"body": [
+			"/******************************************************************************",
+			"*  @file         $TM_FILENAME",
+			"*  @author       Muggle Wei",
+			"*  @email        mugglewei@gmail.com",
+			"*  @date         $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+			"*  @copyright    Copyright $CURRENT_YEAR Muggle Wei",
+			"*  @license      MIT License",
+			"*  @brief        ${2}",
+			"*****************************************************************************/"
+		]
+	},
+	"winexport": {
+		"prefix": "winexport",
+		"body": [
+			"#if WIN32 && defined($1_USE_DLL)",
+			"\t#ifdef $1_EXPORTS",
+			"\t\t#define $2_EXPORT __declspec(dllexport)",
+			"\t#else",
+			"\t\t#define $2_EXPORT __declspec(dllimport)",
+			"\t#endif",
+			"#else",
+			"\t#define $2_EXPORT",
+			"#endif  // $2_EXPORT"
+		]
+	}
+}
