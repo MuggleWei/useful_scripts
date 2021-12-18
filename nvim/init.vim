@@ -27,8 +27,12 @@ call plug#begin(stdpath('data') . '/plugged')
 	" ============== snippets ==============
 	" Plug 'honza/vim-snippets'
 	" Plug 'sirver/ultisnips'
-	Plug 'saadparwaiz1/cmp_luasnip'
-	Plug 'L3MON4D3/LuaSnip'
+	" Plug 'saadparwaiz1/cmp_luasnip'
+	" Plug 'L3MON4D3/LuaSnip'
+
+	Plug 'hrsh7th/cmp-vsnip'
+	Plug 'hrsh7th/vim-vsnip'
+	Plug 'rafamadriz/friendly-snippets'
 
 	" ============== color and theme ==============
 	Plug 'vim-airline/vim-airline'
@@ -107,20 +111,16 @@ for _, lsp in ipairs(servers) do
 	}
 end
 
--- Don't use recommend
--- I like use tab to select, and select none by default and enter to new line
--- -- Set completeopt to have a better completion experience
--- -- vim.o.completeopt = 'menuone,noselect'
-
--- luasnip setup
-local luasnip = require 'luasnip'
+-- Set completeopt to have a better completion experience
+vim.o.completeopt = 'menuone,noselect'
 
 -- nvim-cmp setup
 local cmp = require 'cmp'
 cmp.setup {
 	snippet = {
 		expand = function(args)
-			require('luasnip').lsp_expand(args.body)
+			vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+			-- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
 		end,
 	},
 	mapping = {
@@ -137,8 +137,8 @@ cmp.setup {
 		['<Tab>'] = function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
-			elseif luasnip.expand_or_jumpable() then
-				luasnip.expand_or_jump()
+			-- elseif luasnip.expand_or_jumpable() then
+			-- 	luasnip.expand_or_jump()
 			else
 				fallback()
 			end
@@ -146,8 +146,8 @@ cmp.setup {
 		['<S-Tab>'] = function(fallback)
 			if cmp.visible() then
 				cmp.select_prev_item()
-			elseif luasnip.jumpable(-1) then
-				luasnip.jump(-1)
+			-- elseif luasnip.jumpable(-1) then
+			-- 	luasnip.jump(-1)
 			else
 				fallback()
 			end
@@ -155,7 +155,8 @@ cmp.setup {
 	},
 	sources = {
 		{ name = 'nvim_lsp' },
-		{ name = 'luasnip' },
+		{ name = 'vsnip' }, -- For vsnip users.
+		-- { name = 'luasnip' },  -- For luasnip users.
 	},
 }
 
@@ -225,6 +226,10 @@ let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '```':'```', '"""'
 " let g:UltiSnipsEditSplit="vertical"
 " 
 " let g:ultisnips_python_style="sphinx"
+
+" vim-snip
+imap <expr> <c-e>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<c-e>'
+smap <expr> <c-e>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<c-e>'
 
 """"""""""
 " airline
