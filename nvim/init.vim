@@ -112,7 +112,7 @@ for _, lsp in ipairs(servers) do
 end
 
 -- Set completeopt to have a better completion experience
-vim.o.completeopt = 'menuone,noselect'
+vim.o.completeopt = 'menuone,noinsert,noselect'
 
 -- nvim-cmp setup
 local cmp = require 'cmp'
@@ -158,6 +158,7 @@ cmp.setup {
 		{ name = 'vsnip' }, -- For vsnip users.
 		-- { name = 'luasnip' },  -- For luasnip users.
 	},
+	preselect = false,
 }
 
 EOF
