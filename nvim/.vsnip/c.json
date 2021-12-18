@@ -3,14 +3,14 @@
 		"prefix": "myhead",
 		"body": [
 			"/******************************************************************************",
-			"*  @file         $TM_FILENAME",
-			"*  @author       Muggle Wei",
-			"*  @email        mugglewei@gmail.com",
-			"*  @date         $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
-			"*  @copyright    Copyright $CURRENT_YEAR Muggle Wei",
-			"*  @license      MIT License",
-			"*  @brief        ${2}",
-			"*****************************************************************************/"
+			" *  @file         $TM_FILENAME",
+			" *  @author       Muggle Wei",
+			" *  @email        mugglewei@gmail.com",
+			" *  @date         $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+			" *  @copyright    Copyright $CURRENT_YEAR Muggle Wei",
+			" *  @license      MIT License",
+			" *  @brief        ${2}",
+			" *****************************************************************************/"
 		]
 	},
 	"winexport": {
