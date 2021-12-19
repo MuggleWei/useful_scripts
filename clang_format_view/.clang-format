@@ -1,0 +1,46 @@
+# see: https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+
+# 风格基础
+BasedOnStyle: Webkit
+
+# 用于缩进的列数
+IndentWidth: 4
+# 制表符的列数
+TabWidth: 4
+# 使用制表符的方式
+UseTab: Always
+
+# 大括号的样式
+# 一定要设置BreakBeforeBraces为Custom, 才可以单独设置不同情况的大括号样式
+BreakBeforeBraces: Custom
+BraceWrapping:
+  # switch当中的case
+  AfterCaseLabel: true
+  # 类
+  AfterClass: true
+  # 所有的控制条件: if/for/while/switch/..
+  AfterControlStatement: true
+  # 枚举
+  AfterEnum: true
+  # 函数
+  AfterFunction: true
+  # 命名空间
+  AfterNamespace: false
+  # 结构体
+  AfterStruct: true
+  # 联合体
+  AfterUnion: true
+  # extern "C"
+  AfterExternBlock: false
+  # catch
+  BeforeCatch: true
+  # else
+  BeforeElse: true
+  # lambda - NOTE: clangd9无法识别
+  # BeforeLambdaBody: false
+  # do while - NOTE: clangd9无法识别
+  # BeforeWhile: false
+  # 空函数
+  SplitEmptyFunction: true
+  # 空record: class, struct 以及 union
+  SplitEmptyRecord: false
