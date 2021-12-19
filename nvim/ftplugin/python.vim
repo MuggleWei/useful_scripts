@@ -10,3 +10,6 @@ set colorcolumn=120
 let g:pymode = 1
 " let g:pymode_lint_ignore=["E501","W"]
 let g:pymode_lint_ignore=["E501"]
+
+" auto format
+nmap <s-f> :PymodeLintAuto<CR>
