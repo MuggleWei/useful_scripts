@@ -53,6 +53,8 @@ typedef void (*void_fn)();
 void callback(void_fn)
 {}
 
+} // namespace clang_format_view
+
 int main()
 {
 	// initlaize log
@@ -106,7 +108,7 @@ int main()
 	}
 
 	// BraceWrapping::BeforeLambdaBody
-	callback([]() {
+	clang_format_view::callback([]() {
 		MUGGLE_LOG_INFO("lambda");
 		MUGGLE_LOG_INFO("lambda");
 	});
@@ -119,5 +121,3 @@ int main()
 
 	return 0;
 }
-
-} // namespace clang_format_view
