@@ -119,5 +119,9 @@ int main()
 		i++;
 	} while (i < i_num);
 
+	// PointerAlignment
+	int *p_int = (int *)malloc(sizeof(int));
+	free(p_int);
+
 	return 0;
 }

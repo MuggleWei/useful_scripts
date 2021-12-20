@@ -44,3 +44,6 @@ BraceWrapping:
   SplitEmptyFunction: true
   # 空record: class, struct 以及 union
   SplitEmptyRecord: false
+
+# 指针或引用符号的位置
+PointerAlignment: Right
