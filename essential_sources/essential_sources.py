@@ -32,12 +32,14 @@ if __name__ == "__main__":
         "https://github.com/MuggleWei/latency-benchmark.git",
 
         # 代码
+        "https://github.com/vim/vim.git",
         "https://github.com/neovim/neovim.git",
         "https://github.com/Kitware/CMake.git",
         "https://github.com/wolfSSL/wolfssl.git",
         "https://github.com/openssl/openssl.git",
         "https://github.com/Mbed-TLS/mbedtls.git",
         "https://github.com/madler/zlib.git",
+        "https://github.com/facebook/zstd.git",
         "https://github.com/mcmilk/7-Zip-zstd.git",
         "https://github.com/the-tcpdump-group/libpcap.git",
         "https://github.com/libevent/libevent.git",
