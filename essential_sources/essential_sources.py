@@ -43,6 +43,7 @@ if __name__ == "__main__":
         "https://github.com/mcmilk/7-Zip-zstd.git",
         "https://github.com/the-tcpdump-group/libpcap.git",
         "https://github.com/libevent/libevent.git",
+        "https://github.com/sqlite/sqlite.git",
         "https://github.com/google/googletest.git",
         "https://github.com/gperftools/gperftools.git"
         "https://github.com/protocolbuffers/protobuf.git",
