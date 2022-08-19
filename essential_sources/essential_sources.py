@@ -53,6 +53,7 @@ if __name__ == "__main__":
         "https://github.com/Tencent/rapidjson.git",
         "https://github.com/bkaradzic/bgfx.git",
         "https://github.com/ocornut/imgui.git",
+        "https://github.com/ArthurSonzogni/FTXUI.git",
 
         # 日常生活
         "https://github.com/shadowsocks/shadowsocks-libev.git",
