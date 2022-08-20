@@ -56,7 +56,7 @@ if __name__ == "__main__":
         "https://github.com/ArthurSonzogni/FTXUI.git",
 
         # 学习/博客/例子
-        "https://github.com/jiji262/wooyun_articles.git",
+        # "https://github.com/jiji262/wooyun_articles.git", # 2.5G 太占硬盘了 :(
         "https://github.com/wolfSSL/wolfssl-examples.git",
 
         # 日常生活
