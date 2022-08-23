@@ -54,6 +54,7 @@ if __name__ == "__main__":
         "https://github.com/bkaradzic/bgfx.git",
         "https://github.com/ocornut/imgui.git",
         "https://github.com/ArthurSonzogni/FTXUI.git",
+        "https://github.com/tcltk/tcl.git",  # 编译某些项目时需要此库
 
         # 学习/博客/例子
         # "https://github.com/jiji262/wooyun_articles.git", # 2.5G 太占硬盘了 :(
