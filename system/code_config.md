@@ -3,7 +3,7 @@
 * 下载java, maven, golang, node
 * 安装golang
 ```
-sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzvf go${version}.linux-amd64.tar.gz
+sudo rm -rf /opt/go && sudo tar -C /opt -xzvf go${version}.linux-amd64.tar.gz
 ```
 * 安装java和maven
 ```
@@ -16,10 +16,11 @@ sudo tar -xvf node-${version}-linux-x64.tar.xz -C /opt/
 ```
 * 配置PATH, 在/etc/profile中增加
 ```
+export GOLANG_HOME=/opt/go
 export JAVA_HOME=/opt/jdk-${version}
 export MAVEN_HOME=/opt/apache-maven-${version}
 export NODE_HOME=/opt/node-${version}-linux-x64
-export PATH=/usr/local/go/bin:$JAVA_HOME/bin:$MAVEN_HOME/bin:$NODE_HOME/bin:$PATH
+export PATH=$GOLANG_HOME/bin:$JAVA_HOME/bin:$MAVEN_HOME/bin:$NODE_HOME/bin:$PATH
 ```
 * 将用户目录的bin在~/.bashrc中加入path中(python3默认的脚本安装路径是这个, 安装python的langserver会用到)
 ```
