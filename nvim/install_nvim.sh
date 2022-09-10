@@ -27,7 +27,7 @@
 
 # build type
 BUILD_TYPE=Release
-INSTALL_DIR=/opt/
+INSTALL_DIR=/opt/neovim/
 
 # script directory
 origin_dir="$(dirname "$(readlink -f "$0")")"
