@@ -13,9 +13,13 @@
 # git config --global https.proxy 'socks5://127.0.0.1:1080'
 #
 # ----- set wget proxy -----
+# touch ~/.wgetrc
+# write the ~/.wgetrc config
+# ```
 # use_proxy=on
 # http_proxy=http://127.0.0.1:1080
 # https_proxy=http://127.0.0.1:1080
+# ```
 # 
 # ----- set hosts -----
 # NOTE: maybe need set hosts in /etc/hosts in some situation
