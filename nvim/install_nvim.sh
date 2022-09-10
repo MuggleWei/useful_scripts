@@ -1,31 +1,79 @@
 #!/bin/bash
 
-# clone neovim
-git clone https://github.com/neovim/neovim --branch=v0.6.0 --depth=1
-cd neovim
-
-# Build prerequisites
-sudo apt-get install ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip curl doxygen
-
-# NOTE: maybe need proxy in some situation
+# NOTE: maybe need set proxy and hosts in some situation
+#
+# ----- set http & https proxy -----
 # export http_proxy=socks5://127.0.0.1:1080
 # export https_proxy=socks5://127.0.0.1:1080
+# export HTTP_PROXY=socks5://127.0.0.1:1080
+# export HTTPS_PROXY=socks5://127.0.0.1:1080
+#
+# ----- set git proxy -----
 # git config --global http.proxy 'socks5://127.0.0.1:1080'
 # git config --global https.proxy 'socks5://127.0.0.1:1080'
+#
+# ----- set wget proxy -----
+# use_proxy=on
+# http_proxy=http://127.0.0.1:1080
+# https_proxy=http://127.0.0.1:1080
 # 
+# ----- set hosts -----
 # NOTE: maybe need set hosts in /etc/hosts in some situation
 # 151.101.0.133 raw.githubusercontent.com
 
+# build type
+BUILD_TYPE=Release
+INSTALL_DIR=/opt/
+
+# script directory
+origin_dir="$(dirname "$(readlink -f "$0")")"
+cd $origin_dir
+
+# build prerequisites
+echo "------------------------------"
+echo "build prerequisites"
+echo "------------------------------"
+
+if [ -f "/etc/arch-release" ]; then
+	sudo pacman -S base-devel cmake unzip ninja tree-sitter curl
+elif [ -f "/etc/lsb-release" ]; then
+	sudo apt-get install ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip curl doxygen
+fi
+
+# clone neovim
+echo "------------------------------"
+echo "clone neovim"
+echo "------------------------------"
+
+git clone https://github.com/neovim/neovim --branch=v0.7.2 --depth=1
+cd $origin_dir/neovim
+
+# #########################################
+# # normal
+# 
+# # Build
+# make CMAKE_BUILD_TYPE=Release
+# 
+# # Install
+# sudo make install
+
 #########################################
-# normal
+# separating dependencies and neovim 
+echo "------------------------------"
+echo "build dependencies"
+echo "------------------------------"
 
-# Build
-make CMAKE_BUILD_TYPE=Release
+mkdir -p $origin_dir/neovim/.deps
+cd $origin_dir/neovim/.deps
+cmake ../third-party/ -DCMAKE_BUILD_TYPE=$BUILD_TYPE
+make
 
-# Install
-sudo make install
+echo "------------------------------"
+echo "build neovim"
+echo "------------------------------"
 
-####################################
-# NOTE: 
-# sometimes build will failed in some location cause download failed
-# maybe need to compile in A machine and copy to dst machine.
+cd ..
+mkdir $origin_dir/neovim/build
+cd $origin_dir/neovim/build
+cmake .. -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DCMAKE_INSTALL_PREFIX=$INSTALL_DIR
+make
