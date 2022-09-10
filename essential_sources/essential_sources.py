@@ -32,23 +32,39 @@ if __name__ == "__main__":
         "https://github.com/MuggleWei/latency-benchmark.git",
 
         # 代码
+        "https://github.com/vim/vim.git",
+        "https://github.com/neovim/neovim.git",
         "https://github.com/Kitware/CMake.git",
         "https://github.com/wolfSSL/wolfssl.git",
         "https://github.com/openssl/openssl.git",
         "https://github.com/Mbed-TLS/mbedtls.git",
         "https://github.com/madler/zlib.git",
+        "https://github.com/facebook/zstd.git",
         "https://github.com/mcmilk/7-Zip-zstd.git",
+        "https://github.com/the-tcpdump-group/libpcap.git",
+        "https://github.com/libevent/libevent.git",
+        "https://github.com/sqlite/sqlite.git",
         "https://github.com/google/googletest.git",
+        "https://github.com/gperftools/gperftools.git"
         "https://github.com/protocolbuffers/protobuf.git",
         "https://github.com/gflags/gflags.git",
         "https://github.com/danmar/cppcheck.git",
         "https://github.com/leethomason/tinyxml2.git",
         "https://github.com/Tencent/rapidjson.git",
+        "https://github.com/bkaradzic/bgfx.git",
         "https://github.com/ocornut/imgui.git",
+        "https://github.com/ArthurSonzogni/FTXUI.git",
+        "https://github.com/tcltk/tcl.git",  # 编译某些项目时需要此库
 
-        # 生活
+        # 学习/博客/例子
+        # "https://github.com/jiji262/wooyun_articles.git", # 2.5G 太占硬盘了 :(
+        "https://github.com/wolfSSL/wolfssl-examples.git",
+
+        # 日常生活
         "https://github.com/shadowsocks/shadowsocks-libev.git",
         "https://github.com/adityatelange/hugo-PaperMod.git",
+        "https://github.com/KaTeX/KaTeX.git",
+        "https://github.com/mdaines/viz.js.git",
     ]
 
     # 当前工作目录下的目录
