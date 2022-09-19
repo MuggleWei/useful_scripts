@@ -32,12 +32,13 @@ call plug#begin(stdpath('data') . '/plugged')
 
 	Plug 'hrsh7th/cmp-vsnip'
 	Plug 'hrsh7th/vim-vsnip'
+	Plug 'hrsh7th/vim-vsnip-integ'
 	Plug 'rafamadriz/friendly-snippets'
 
 	" ============== color and theme ==============
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
-    Plug 'altercation/vim-colors-solarized'
+	Plug 'altercation/vim-colors-solarized'
 	Plug 'joshdick/onedark.vim'
 	Plug 'sheerun/vim-polyglot'
 
@@ -229,8 +230,10 @@ let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '```':'```', '"""'
 " let g:ultisnips_python_style="sphinx"
 
 " vim-snip
-imap <expr> <c-e>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<c-e>'
-smap <expr> <c-e>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<c-e>'
+"imap <expr> <c-e>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<c-e>'
+"smap <expr> <c-e>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<c-e>'
+imap <expr> <C-e>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-e>'
+smap <expr> <C-e>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-e>'
 
 """"""""""
 " airline
