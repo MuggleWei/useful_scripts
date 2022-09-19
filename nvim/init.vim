@@ -101,7 +101,7 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'clangd', 'pyright', 'gopls' }
+local servers = { 'clangd', 'pyright', 'gopls', 'tsserver' }
 for _, lsp in ipairs(servers) do
 	nvim_lsp[lsp].setup {
 		on_attach = on_attach,
@@ -230,10 +230,10 @@ let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '```':'```', '"""'
 " let g:ultisnips_python_style="sphinx"
 
 " vim-snip
-"imap <expr> <c-e>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<c-e>'
-"smap <expr> <c-e>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<c-e>'
-imap <expr> <C-e>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-e>'
-smap <expr> <C-e>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-e>'
+imap <expr> <c-e>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<c-e>'
+smap <expr> <c-e>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<c-e>'
+imap <expr> <C-y>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-y>'
+smap <expr> <C-y>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-y>'
 
 """"""""""
 " airline

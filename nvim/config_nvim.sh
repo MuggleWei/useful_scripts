@@ -92,6 +92,12 @@ echo "------------------------------"
 #python3 -m pip install --user --upgrade python-lsp-server[all]
 python3 -m pip install --user --upgrade pyright
 
+echo "------------------------------"
+echo "install language server - TypeScript"
+echo "------------------------------"
+
+npm install -g typescript-language-server typescript
+
 # install plugins
 echo "------------------------------"
 echo "install plugins"
