@@ -21,6 +21,10 @@
 # http_proxy=http://127.0.0.1:1080
 # https_proxy=http://127.0.0.1:1080
 # ```
+#
+# ----- set /etc/hosts -----
+# 151.101.0.133 raw.githubusercontent.com
+#
 
 # build type
 BUILD_TYPE=Release
