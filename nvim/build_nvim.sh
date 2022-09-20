@@ -36,9 +36,9 @@ echo "build prerequisites"
 echo "------------------------------"
 
 if [ -f "/etc/arch-release" ]; then
-	sudo pacman -S base-devel cmake unzip ninja tree-sitter curl
+	sudo pacman -S base-devel cmake unzip ninja tree-sitter curl wget
 elif [ -f "/etc/lsb-release" ]; then
-	sudo apt-get install ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip curl doxygen
+	sudo apt-get install ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip curl wget doxygen
 fi
 
 # clone neovim
