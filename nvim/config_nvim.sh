@@ -96,7 +96,7 @@ echo "------------------------------"
 echo "install language server - TypeScript"
 echo "------------------------------"
 
-npm install -g typescript-language-server typescript
+sudo npm install -g typescript-language-server typescript
 
 # install plugins
 echo "------------------------------"
