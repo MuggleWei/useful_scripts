@@ -9,5 +9,12 @@
 			"\t})",
 			"}"
 		]
+	},
+	"funch": {
+		"prefix": "funch",
+		"body": [
+			"func ${1}(w http.ResponseWriter, r *http.Request) {",
+			"}"
+		]
 	}
 }
