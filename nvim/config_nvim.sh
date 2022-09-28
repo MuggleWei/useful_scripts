@@ -6,7 +6,7 @@
 # cp $repo/tmux/.tmux.conf ~/
 
 # get curl proxy
-echo "Usage: $0 [cur_proxy]"
+echo "Usage: $0 [curl_proxy]"
 if [[ $# -gt 0 ]]; then
 	echo "set curl proxy: $1"
 	curl_proxy=$1
@@ -48,8 +48,8 @@ if [ -z "$curl_proxy" ]; then
 		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 else
 	sh -c \
-		"http_proxy=socks5://$curl_proxy \
-		https_proxy=socks5://$curl_proxy \
+		"http_proxy=http://$curl_proxy \
+		https_proxy=http://$curl_proxy \
 		all_proxy=socks5://$curl_proxy \
 		curl -fLo \
 		\"${XDG_DATA_HOME:-$HOME/.local/share}\"/nvim/site/autoload/plug.vim --create-dirs \
