@@ -4,10 +4,10 @@
 #
 # ----- set http & https proxy -----
 # export all_proxy=socks5://127.0.0.1:1080
-# export http_proxy=socks5://127.0.0.1:1080
-# export https_proxy=socks5://127.0.0.1:1080
-# export HTTP_PROXY=socks5://127.0.0.1:1080
-# export HTTPS_PROXY=socks5://127.0.0.1:1080
+# export http_proxy=http://127.0.0.1:1080
+# export https_proxy=http://127.0.0.1:1080
+# export HTTP_PROXY=http://127.0.0.1:1080
+# export HTTPS_PROXY=http://127.0.0.1:1080
 #
 # ----- set git proxy -----
 # git config --global http.proxy 'socks5://127.0.0.1:1080'
@@ -21,9 +21,6 @@
 # http_proxy=http://127.0.0.1:1080
 # https_proxy=http://127.0.0.1:1080
 # ```
-#
-# ----- set /etc/hosts -----
-# 151.101.0.133 raw.githubusercontent.com
 #
 
 # build type
