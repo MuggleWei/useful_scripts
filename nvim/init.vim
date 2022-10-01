@@ -303,6 +303,9 @@ else
 endif
 colorscheme solarized
 
+" " if wanna have transparency in desktop environment, open it
+" highlight Normal ctermbg=NONE
+
 """""""""""""""""""""""""""""""""""""
 " other
 
