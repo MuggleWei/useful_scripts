@@ -1,7 +1,7 @@
 # see: https://clang.llvm.org/docs/ClangFormatStyleOptions.html
 
 # 风格基础
-BasedOnStyle: Webkit
+BasedOnStyle: Google
 
 # 用于缩进的列数
 IndentWidth: 4
@@ -9,6 +9,14 @@ IndentWidth: 4
 TabWidth: 4
 # 使用制表符的方式
 UseTab: Always
+# 类访问控制偏移
+AccessModifierOffset: -4
+# 等号对齐
+AlignConsecutiveAssignments: Consecutive
+# 构造函数初始化列表
+PackConstructorInitializers: Never
+# 构造函数初始化列表, 逗号位置
+BreakConstructorInitializers: BeforeComma
 
 # 大括号的样式
 # 一定要设置BreakBeforeBraces为Custom, 才可以单独设置不同情况的大括号样式
@@ -37,9 +45,9 @@ BraceWrapping:
   # else
   BeforeElse: true
   # lambda - NOTE: clangd9无法识别
-  # BeforeLambdaBody: false
+  BeforeLambdaBody: false
   # do while - NOTE: clangd9无法识别
-  # BeforeWhile: false
+  BeforeWhile: false
   # 空函数
   SplitEmptyFunction: true
   # 空record: class, struct 以及 union

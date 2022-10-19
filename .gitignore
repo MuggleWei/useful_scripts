@@ -2,8 +2,15 @@
 *~
 *.swp
 
+# deps
+_deps/
+
 # vscode
 .vscode
+
+# clangd
+.clangd/
+.cache/
 
 # cmake build
 build/
@@ -13,9 +20,6 @@ compile_commands.json
 
 # gitosis build
 /gitosis/gitosis
-
-# clangd
-.clangd
 
 # venv
 venv/

@@ -4,27 +4,25 @@
 #include "muggle/c/muggle_c.h"
 
 // BraceWrapping::AfterExternBlock
-extern "C" {}
+extern "C" {
+}
 
 namespace clang_format_view {
 
 // BraceWrapping::AfterClass
 class Foo
 {
-public:
+public:	 // AccessModifierOffset
+	// PackConstructorInitializers
+	// BreakConstructorInitializers
 	Foo()
 		: idx_(++s_idx)
 		, val_(5.0)
-	{}
+	{
+	}
 
-	int getIdx()
-	{
-		return idx_;
-	}
-	double getVal()
-	{
-		return val_;
-	}
+	int getIdx() { return idx_; }
+	double getVal() { return val_; }
 
 private:
 	static int s_idx;
@@ -50,10 +48,9 @@ union bar
 {};
 
 typedef void (*void_fn)();
-void callback(void_fn)
-{}
+void callback(void_fn) {}
 
-} // namespace clang_format_view
+}  // namespace clang_format_view
 
 int main()
 {
@@ -62,27 +59,29 @@ int main()
 
 	// get a random number
 	srand((unsigned int)time(NULL));
+
+	// AlignConsecutiveAssignments
 	double rand_num = (double)rand() / RAND_MAX;
-	int i_num = (int)(10 * rand_num);
+	int i_num		= (int)(10 * rand_num);
 
 	switch (i_num)
 	{
-	// BraceWrapping::AfterCaseLabel
-	case 1:
-	{
-		MUGGLE_LOG_INFO("integer value: 1");
-	}
-	break;
-	case 2:
-	{
-		MUGGLE_LOG_INFO("integer value: 2");
-	}
-	break;
-	default:
-	{
-		MUGGLE_LOG_INFO("integer value not equal 1 or 2");
-	}
-	break;
+		// BraceWrapping::AfterCaseLabel
+		case 1:
+		{
+			MUGGLE_LOG_INFO("integer value: 1");
+		}
+		break;
+		case 2:
+		{
+			MUGGLE_LOG_INFO("integer value: 2");
+		}
+		break;
+		default:
+		{
+			MUGGLE_LOG_INFO("integer value not equal 1 or 2");
+		}
+		break;
 	}
 
 	// BraceWrapping::AfterControlStatement
