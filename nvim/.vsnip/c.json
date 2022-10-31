@@ -26,5 +26,15 @@
 			"\t#define $2_EXPORT",
 			"#endif  // $2_EXPORT"
 		]
+	},
+	"main": {
+		"prefix": "main",
+		"body": [
+			"int main(int argc, char *argv[])",
+			"{",
+			"$1",
+			"\treturn 0;",
+			"}"
+		]
 	}
 }
