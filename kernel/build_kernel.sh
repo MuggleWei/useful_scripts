@@ -22,10 +22,12 @@ mkdir -p $result_dir/lib/modules
 echo "kernel source in directory: $kernel_src_dir"
 cd $kernel_src_dir
 
+make mrproper
+
 # configuring, uncomment 1 below
-#make menuconfig
+make menuconfig
 #zcat /proc/config.gz > .config
-make defconfig
+#make defconfig
 
 make oldconfig
 
@@ -39,3 +41,15 @@ cp .config $result_dir/boot/config-$kernel_ver
 
 rm -rf $result_dir/lib/modules/$kernel_ver/build
 rm -rf $result_dir/lib/modules/$kernel_ver/source
+
+cd $result_dir
+
+echo "#!/bin/bash" > install.sh
+echo "" >> install.sh
+echo "mv lib/modules/$kernel_ver /lib/modules/" >> install.sh
+echo "mv boot/vmlinuz-$kernel_ver /boot/" >> install.sh
+echo "grub-mkconfig -o /boot/grub/grub.cfg" >> install.sh
+chmod u+x install.sh
+
+zip -r linux-$kernel_ver.zip *
+mv linux-$kernel_ver.zip $origin_dir/

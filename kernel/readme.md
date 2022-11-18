@@ -14,9 +14,11 @@
 * kernel-source-directory: 指定要编译的kernel代码所在的目录
 
 ### 配置
-在此脚本中, 使用了默认的配置`make defconfig`, 这在大多数情况下是无法正常运行的. 可以根据需要修改脚本, 在三种配置方式中选一种使用:
+可以根据需要修改脚本, 在三种配置方式中选一种使用:
 ```
 # 通过菜单配置
+# 可通过 lspci -k 来查看当前硬件所需要的 Kernel driver 和 modules
+# 之后通过在菜单中搜索并勾选来配置编译
 make menuconfig
 
 # 使用当前正在使用的配置
@@ -25,5 +27,13 @@ make menuconfig
 zcat /proc/config.gz > .config
 
 # 使用默认的配置
+# 但要注意: 这在大多数情况下是无法正常运行
 make defconfig
 ```
+
+### 安装
+* 将打包好的zip包拷贝至需要安装的机器上并解压
+* 将解压之后的镜像(vmlinuz-*)拷贝至 /boot/
+* 将 lib/modules/ 中的文件夹拷贝至 /lib/modules/
+* 运行 grub 自动配置 `grub-mkconfig -o /boot/grub/grub.cfg` 来自动配置启动项
+* 重启, 在 grub 界面中选择高级, 然后选择上面步骤中安装的 kernel
