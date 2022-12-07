@@ -14,7 +14,12 @@ sudo unzip apache-maven-${version}-bin.zip -d /opt/
 ```
 sudo tar -xvf node-${version}-linux-x64.tar.xz -C /opt/
 ```
-* 配置PATH, 在/etc/profile中增加
+* 安装rust
+```
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+* 配置PATH
+在 /etc/profile 中增加
 ```
 export GOLANG_HOME=/opt/go
 export JAVA_HOME=/opt/jdk-${version}
@@ -22,6 +27,11 @@ export MAVEN_HOME=/opt/apache-maven-${version}
 export NODE_HOME=/opt/node-${version}-linux-x64
 export PATH=$GOLANG_HOME/bin:$JAVA_HOME/bin:$MAVEN_HOME/bin:$NODE_HOME/bin:$PATH
 ```
+在 ~/.bashrc 中增加
+```
+source "$HOME/.cargo/env"
+```
+注意，如果在 ~/.bashrc 中有 `exec fish` 之类的调用其他 `shell` 的情况, 需要确保 `source` 语句在其之前  
 * 将用户目录的bin在~/.bashrc中加入path中(python3默认的脚本安装路径是这个, 安装python的langserver会用到)
 ```
 export PATH=$PATH:$HOME/.local/bin
@@ -36,6 +46,15 @@ export PATH=$PATH:$GOPATH/bin
 go env -w GO111MODULE=on
 go env -w GOPROXY=https://goproxy.cn,direct
 go env -w GOPRIVATE=*.${私有库地址}  # 排除私有库
+```
+* (可选)配置rust的cargo代理, 创建 ~/.cargo/config 并写入
+```
+[http]
+proxy = "127.0.0.1:1080"
+
+[https]
+proxy = "127.0.0.1:1080"
+
 ```
 * 设置软件源
 ```
