@@ -5,6 +5,8 @@
 # setup tmux
 # cp $repo/tmux/.tmux.conf ~/
 
+origin_dir="$(dirname "$(readlink -f "$0")")"
+
 # get curl proxy
 echo "Usage: $0 [curl_proxy]"
 if [[ $# -gt 0 ]]; then
@@ -97,6 +99,16 @@ echo "install language server - TypeScript"
 echo "------------------------------"
 
 sudo npm install -g typescript-language-server typescript
+
+# setup rust-analyzer
+echo "------------------------------"
+echo "install language server - rust"
+echo "------------------------------"
+
+curl -L https://github.com/rust-lang/rust-analyzer/releases/download/2022-12-05/rust-analyzer-x86_64-unknown-linux-gnu.gz --output rust-analyzer-x86_64-unknown-linux-gnu.gz
+gunzip rust-analyzer-x86_64-unknown-linux-gnu.gz -c > rust-analyzer
+chmod u+x rust-analyzer
+mv rust-analyzer ~/.cargo/bin/
 
 # install plugins
 echo "------------------------------"
