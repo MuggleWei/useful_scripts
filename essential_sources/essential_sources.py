@@ -30,6 +30,9 @@ if __name__ == "__main__":
         "https://github.com/MuggleWei/babeltrader.git",
         "https://github.com/MuggleWei/mugglecpp.git",
         "https://github.com/MuggleWei/latency-benchmark.git",
+        "https://github.com/MuggleWei/srclient.git",
+        "https://github.com/MuggleWei/webtoy.git"
+        "https://github.com/MuggleWei/goev.git"
 
         # 代码
         "https://github.com/vim/vim.git",
@@ -58,6 +61,7 @@ if __name__ == "__main__":
         "https://github.com/ocornut/imgui.git",
         "https://github.com/ArthurSonzogni/FTXUI.git",
         "https://github.com/tcltk/tcl.git",  # 编译某些项目时需要此库
+        "https://github.com/openai/gpt-2.git",
 
         # 学习/博客/例子
         # "https://github.com/jiji262/wooyun_articles.git", # 2.5G 太占硬盘了 :(
