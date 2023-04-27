@@ -5,6 +5,8 @@ set tabstop=4     " size of tab width
 set shiftwidth=4  " size of shift width
 set noexpandtab
 
+set colorcolumn=80
+
 " easy-align, Aligning C-style variable definition
 let g:easy_align_delimiters['d'] = {
   \ 'pattern': ' \ze\S\+\s*[;=]',
