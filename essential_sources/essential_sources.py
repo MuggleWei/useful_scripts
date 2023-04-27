@@ -36,6 +36,7 @@ if __name__ == "__main__":
         "https://github.com/MuggleWei/hpb.git",
 
         # 代码
+        "https://github.com/python/cpython.git",
         "https://github.com/vim/vim.git",
         "https://github.com/neovim/neovim.git",
         "https://github.com/Kitware/CMake.git",
