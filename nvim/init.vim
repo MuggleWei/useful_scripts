@@ -243,8 +243,8 @@ smap <expr> <C-y>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-y
 """"""""""
 " vim-visual-multi
 let g:VM_maps = {}
-let g:VM_maps['Find Under']         = '<C-w>'           " replace C-n
-let g:VM_maps['Find Subword Under'] = '<C-w>'           " replace visual C-n
+let g:VM_maps['Find Under']         = '<leader>w'           " replace C-n
+let g:VM_maps['Find Subword Under'] = '<leader>w'           " replace visual C-n
 
 """"""""""
 " airline
