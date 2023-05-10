@@ -35,6 +35,9 @@ call plug#begin(stdpath('data') . '/plugged')
 	Plug 'hrsh7th/vim-vsnip-integ'
 	Plug 'rafamadriz/friendly-snippets'
 
+	" ============== multiple visual cursor ==============
+	Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+
 	" ============== color and theme ==============
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
@@ -236,6 +239,12 @@ imap <expr> <c-e>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<c-e
 smap <expr> <c-e>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<c-e>'
 imap <expr> <C-y>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-y>'
 smap <expr> <C-y>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-y>'
+
+""""""""""
+" vim-visual-multi
+let g:VM_maps = {}
+let g:VM_maps['Find Under']         = '<C-w>'           " replace C-n
+let g:VM_maps['Find Subword Under'] = '<C-w>'           " replace visual C-n
 
 """"""""""
 " airline
