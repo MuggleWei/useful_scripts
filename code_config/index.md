@@ -6,7 +6,7 @@
 * 安装 Basic tool
 ```
 # archlinux
-sudo pacman -Sy base-devel
+sudo pacman -S base-devel
 
 # ubuntu
 sudo apt install cmake build-essential
@@ -76,4 +76,17 @@ proxy = "127.0.0.1:1080"
 * 安装vim和nvim以及插件
 ```
 参考vim和nvim目录
+```
+* (可选)配置fish shell
+```
+sudo pacman -S fish
+
+# 在 ~/.bashrc 的末尾加入
+exec fish
+
+# 退出重新进入之后查看可选的主题
+fish_config theme list
+
+# 选择一个主题, 例如 "ayu Dark"
+fish_config theme choose "ayu Dark"
 ```
