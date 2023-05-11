@@ -34,6 +34,7 @@ if __name__ == "__main__":
         "https://github.com/MuggleWei/webtoy.git",
         "https://github.com/MuggleWei/goev.git",
         "https://github.com/MuggleWei/hpb.git",
+        "https://github.com/MuggleWei/hpkg.git",
 
         # 代码
         "https://github.com/python/cpython.git",
