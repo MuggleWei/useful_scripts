@@ -30,6 +30,7 @@ if __name__ == "__main__":
         "https://github.com/MuggleWei/babeltrader.git",
         "https://github.com/MuggleWei/mugglecpp.git",
         "https://github.com/MuggleWei/latency-benchmark.git",
+        "https://github.com/MuggleWei/callback_benchmark.git",
         "https://github.com/MuggleWei/srclient.git",
         "https://github.com/MuggleWei/webtoy.git",
         "https://github.com/MuggleWei/goev.git",
