@@ -36,6 +36,7 @@ sudo chown -R $user_name:$user_name /home/$user_name/gitolite_migrate
 
 # install gitolite
 cd /home/$user_name
+#sudo -H -u git git config --global http.https://github.com.proxy socks5://127.0.0.1:1080
 sudo -H -u git git clone https://github.com/sitaramc/gitolite.git
 sudo -H -u git mkdir -p /home/$user_name/bin
 sudo -H -u git gitolite/install -to /home/$user_name/bin
