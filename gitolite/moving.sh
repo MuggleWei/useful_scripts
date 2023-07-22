@@ -25,9 +25,16 @@ else
 	echo "The user($user_name) already exist"
 fi
 
-# gen key
-ssh-keygen -f $user_name
-pub=$PWD/$user_name.pub
+# unzip migrate package
+origin_dir="$(dirname "$(readlink -f "$0")")"
+cp $origin_dir
+unzip gitolite_migrate.zip
+mv gitolite_migrate/gitolite-admin . 
+
+sudo su
+cd /home/$user_name
+mv gitolite_migrate /home/$user_name/
+chown -R $user_name:$user_name gitolite_migrate
 
 # install gitolite
 cd /home/$user_name
@@ -35,5 +42,11 @@ sudo -H -u git git clone https://github.com/sitaramc/gitolite.git
 sudo -H -u git mkdir -p /home/$user_name/bin
 sudo -H -u git gitolite/install -to /home/$user_name/bin
 
-sudo -H -u git env PATH=$PATH:/home/$user_name/bin gitolite setup -pk $pub
+# set admin key
+sudo -H -u git env PATH=$PATH:/home/$user_name/bin gitolite setup -pk ./gitolite_migrate/keys/$user_name.pub
 
+# copy rc file
+mv ./gitolite_migrate/.gitolite.rc .
+
+# copy all repositories
+mv ./gitolite_migrate/repositories/* /home/$user_name/repositories/
