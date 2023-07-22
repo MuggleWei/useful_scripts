@@ -31,10 +31,8 @@ cp $origin_dir
 unzip gitolite_migrate.zip
 mv gitolite_migrate/gitolite-admin . 
 
-sudo su
-cd /home/$user_name
-mv gitolite_migrate /home/$user_name/
-chown -R $user_name:$user_name gitolite_migrate
+sudo mv gitolite_migrate /home/$user_name/
+sudo chown -R $user_name:$user_name /home/$user_name/gitolite_migrate
 
 # install gitolite
 cd /home/$user_name

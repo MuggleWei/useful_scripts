@@ -33,4 +33,18 @@ gitolite_migrate
 * 将上述文件夹打包为 `gitolite_migrate.zip`, 并传至新的机器上
 * 将 `moving.sh` 放入 `gitolite_migrate.zip` 的同级目录, 运行此脚本
 * 将上一步释放出来的 `gitolite-admin` 放至合适的位置, 进入目录并更改远程库地址: `git remote set-url origin <new-url>`, 并强制推送: `git push -f`
+* 将上一步释放出来的 `keys` 文件夹中的密钥放至适合的位置, 并配置 ssh, 例如
+ ```
+ Host local.gitolite.admin.com
+ 	HostName 127.0.0.1
+ 	Port 22
+ 	IdentityFile ~/.ssh/git
+ 	IdentitiesOnly yes
+
+ Host local.gitolite.com
+ 	HostName 127.0.0.1
+ 	Port 22
+ 	IdentityFile ~/.ssh/foo
+ 	IdentitiesOnly yes
+ ```
 * 执行 `setup`: `sudo -H -u git env PATH=$PATH:/home/$user_name/bin gitolite setup`
