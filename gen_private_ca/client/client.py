@@ -25,7 +25,7 @@ import requests
 
 def run_rest():
     url = "https://127.0.0.1:10102/world"
-    r = requests.get(url, verify=False)
+    r = requests.get(url, verify="../build/domain.crt")
     print(r.text)
 
 
