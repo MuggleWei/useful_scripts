@@ -24,6 +24,7 @@ if __name__ == "__main__":
         # 自己的代码库
         "https://github.com/MuggleWei/mugglec.git",
         "https://github.com/MuggleWei/haclog.git",
+        "https://github.com/MuggleWei/yoauth.git",
         "https://github.com/MuggleWei/Hakuna_Matata.git",
         "https://github.com/MuggleWei/useful_scripts.git",
         "https://github.com/MuggleWei/mugglewei.github.io.git",
@@ -33,6 +34,7 @@ if __name__ == "__main__":
         "https://github.com/MuggleWei/latency-benchmark.git",
         "https://github.com/MuggleWei/callback_benchmark.git",
         "https://github.com/MuggleWei/cc_log_benchmark.git",
+        "https://github.com/MuggleWei/net_model_benchmark.git",
         "https://github.com/MuggleWei/srclient.git",
         "https://github.com/MuggleWei/webtoy.git",
         "https://github.com/MuggleWei/goev.git",
@@ -40,7 +42,6 @@ if __name__ == "__main__":
         "https://github.com/MuggleWei/hpkg.git",
         "https://github.com/MuggleWei/babeltrader_cpp_base.git",
         "https://github.com/MuggleWei/babeltrader_cpp_ext.git",
-        "https://github.com/MuggleWei/yoauth.git",
         "https://github.com/MuggleWei/mariadb-connector-cpp.git",
 
         # 代码
