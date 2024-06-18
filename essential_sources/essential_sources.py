@@ -25,6 +25,7 @@ if __name__ == "__main__":
         "https://github.com/MuggleWei/mugglec.git",
         "https://github.com/MuggleWei/haclog.git",
         "https://github.com/MuggleWei/yoauth.git",
+        "https://github.com/MuggleWei/bdchecker.git",
         "https://github.com/MuggleWei/Hakuna_Matata.git",
         "https://github.com/MuggleWei/useful_scripts.git",
         "https://github.com/MuggleWei/mugglewei.github.io.git",
