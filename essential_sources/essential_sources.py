@@ -80,6 +80,7 @@ if __name__ == "__main__":
         # 学习/博客/例子
         # "https://github.com/jiji262/wooyun_articles.git", # 2.5G 太占硬盘了 :(
         "https://github.com/wolfSSL/wolfssl-examples.git",
+        "https://github.com/ArthurChiao/arthurchiao.github.io.git",
 
         # 日常生活
         "https://github.com/shadowsocks/shadowsocks-libev.git",
