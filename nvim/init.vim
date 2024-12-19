@@ -45,6 +45,9 @@ call plug#begin(stdpath('data') . '/plugged')
 	Plug 'joshdick/onedark.vim'
 	Plug 'sheerun/vim-polyglot'
 
+	" ============== git diff ==============
+	Plug 'sindrets/diffview.nvim'
+
 	" ============== python ==============
 	Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
