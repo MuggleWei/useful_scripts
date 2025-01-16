@@ -7,3 +7,8 @@ Host github.com
 	IdentityFile ~/.ssh/github_priv_key
 	ProxyCommand nc -x 127.0.0.1:1080 %h %p
 ```
+
+当在 Windows 下时, 由于不存在 `nc` 命令, 可以使用以下命令代替
+```
+ProxyCommand connect -S 127.0.0.1:1080 %h %p
+```
