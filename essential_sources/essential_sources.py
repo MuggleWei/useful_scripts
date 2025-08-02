@@ -38,6 +38,7 @@ if __name__ == "__main__":
         "https://github.com/MuggleWei/cc_log_benchmark.git",
         "https://github.com/MuggleWei/network_benchmark.git",
         "https://github.com/MuggleWei/net_model_benchmark.git",
+        "https://github.com/MuggleWei/c2c_benchmark.git",
         "https://github.com/MuggleWei/srclient.git",
         "https://github.com/MuggleWei/webtoy.git",
         "https://github.com/MuggleWei/goev.git",
