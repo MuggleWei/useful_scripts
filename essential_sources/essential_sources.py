@@ -57,6 +57,7 @@ if __name__ == "__main__":
         "https://github.com/wolfSSL/wolfssl.git",
         "https://github.com/openssl/openssl.git",
         "https://github.com/Mbed-TLS/mbedtls.git",
+        "https://github.com/jedisct1/libsodium.git",
         "https://github.com/gpg/gnupg.git",
         "https://github.com/gpg/libgcrypt.git",
         "https://github.com/gpg/libgpg-error.git",
