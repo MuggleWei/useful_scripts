@@ -322,11 +322,14 @@ syntax enable
 "colorscheme NeoSolarized
 
 set termguicolors
+
 colorscheme flexoki
-highlight Normal guibg=#1C1B1A
-highlight NormalNC guibg=#1C1B1A
-highlight LineNr guibg=#1C1B1A
-highlight SignColumn guibg=#1C1B1A
+highlight Normal guibg=#1C1C1C
+highlight NormalNC guibg=#1C1C1C
+highlight LineNr guibg=#1C1C1C
+highlight SignColumn guibg=#1C1C1C
+
+highlight CursorLineNr guifg=#FFFF40
 
 "if has('gui_running')
 "    set background=light
