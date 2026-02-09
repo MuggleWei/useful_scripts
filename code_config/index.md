@@ -70,17 +70,16 @@ go env -w GOPRIVATE=*.${私有库地址}  # 排除私有库
 ```
 
 ### node
-* 配置 `npm -g` 全局安装的位置
+* 配置 `~/.npmrc`
 ```
-touch .npmrc
-```
+# 配置镜像源
+registry=https://registry.npm.taobao.org/
 
-编辑 `.npmrc`
-```
+# 配置全局安装(npm -g)的路径
 prefix=~/.npm-global
 ```
 
-* 在 `.bashrc` 当中增加, 这样 `npm` 全局安装的应用边可以被直接使用
+* 在 `.bashrc` 当中增加, 这样 `npm` 全局安装的应用便可以被直接使用
 ```
 export NPM_GLOBAL=$HOME/.npm-global
 export PATH=$NPM_GLOBAL/bin:$PATH
