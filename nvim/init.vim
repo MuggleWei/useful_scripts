@@ -45,6 +45,7 @@ call plug#begin(stdpath('data') . '/plugged')
 	Plug 'Tsuzat/NeoSolarized.nvim', {'branch': 'master'}
 	Plug 'joshdick/onedark.vim'
 	Plug 'Mofiqul/vscode.nvim'
+	Plug 'kepano/flexoki-neovim'
 	Plug 'sheerun/vim-polyglot'
 
 	" ============== git diff ==============
@@ -318,7 +319,9 @@ syntax enable
 
 "colorscheme vscode
 
-colorscheme NeoSolarized
+"colorscheme NeoSolarized
+
+colorscheme flexoki-dark
 
 "if has('gui_running')
 "    set background=light
