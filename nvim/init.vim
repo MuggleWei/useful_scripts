@@ -41,8 +41,10 @@ call plug#begin(stdpath('data') . '/plugged')
 	" ============== color and theme ==============
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
-	Plug 'altercation/vim-colors-solarized'
+	"Plug 'altercation/vim-colors-solarized'
+	Plug 'Tsuzat/NeoSolarized.nvim', {'branch': 'master'}
 	Plug 'joshdick/onedark.vim'
+	Plug 'Mofiqul/vscode.nvim'
 	Plug 'sheerun/vim-polyglot'
 
 	" ============== git diff ==============
@@ -311,14 +313,20 @@ set wildignore+=build/*,*.so,*.swp,*.zip
 
 " colorscheme
 syntax enable
+
 "colorscheme onedark
-if has('gui_running')
-	set background=light
-else
-	set background=dark
-	let g:solarized_termcolors=256
-endif
-colorscheme solarized
+
+"colorscheme vscode
+
+colorscheme NeoSolarized
+
+"if has('gui_running')
+"    set background=light
+"else
+"    set background=dark
+"    let g:solarized_termcolors=256
+"endif
+"colorscheme solarized
 
 " " if wanna have transparency in desktop environment, open it
 " highlight Normal ctermbg=NONE
