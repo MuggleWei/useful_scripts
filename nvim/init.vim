@@ -312,6 +312,7 @@ imap <C-s> <Esc>:w!<CR>
 " ctrlp, leaderf will use it
 set wildignore+=build/*,*.so,*.swp,*.zip
 
+"""""""""""""""""""""""""""""""""""""
 " colorscheme
 syntax enable
 
@@ -341,6 +342,10 @@ highlight CursorLineNr guifg=#FFFF40
 
 " " if wanna have transparency in desktop environment, open it
 " highlight Normal ctermbg=NONE
+
+" error tips
+highlight SignColumn guibg=#282c34
+highlight DiagnosticSignError guifg=#ffffff guibg=#fa623d
 
 """""""""""""""""""""""""""""""""""""
 " other
