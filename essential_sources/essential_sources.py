@@ -48,6 +48,7 @@ if __name__ == "__main__":
         "https://github.com/MuggleWei/babeltrader_cpp_base.git",
         "https://github.com/MuggleWei/babeltrader_cpp_ext.git",
         "https://github.com/MuggleWei/mariadb-connector-cpp.git",
+        "https://github.com/MuggleWei/ltail.git",
 
         # 代码
         "https://github.com/python/cpython.git",
