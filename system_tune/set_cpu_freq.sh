@@ -14,4 +14,6 @@ sudo cpupower frequency-set -f $TARGET_FREQ
 #sudo cpupower frequency-set --max $TARGET_FREQ --min $TARGET_FREQ
 
 # show current frequency
+echo "----------------"
+echo "scaling_cur_freq"
 cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq
