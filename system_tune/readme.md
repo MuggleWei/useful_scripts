@@ -25,6 +25,8 @@
 2. 若在 GRUB 中设置了 `intel_pstate=disable`/`amd_pstate=disable`, 使用 `show_cpu_freq.sh` 看到的 `cpuinfo_max_freq` 合适的话, 修改 `set_cpu_freq.sh` 中的频率, 运行
 3. 若上面两种方法都不合适的情况下, 修改 `force_set_cpu_freq.sh`, 运行, 从而尝试强制指定一个频率范围
 
+设置成功之后, 可以通过 `cat /proc/cpuinfo | grep -E "Hz"` 来查看 CPU 频率, 或者运行 `monitor_cpu_freq.sh` 来持续监控 CPU 的频率
+
 最后, 如果要取消上面设置的频率, 只需使用 `cpupower frequency-set -g` 切换到其他的 `governor` 即可恢复
 
 ### 关闭图形界面
