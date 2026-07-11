@@ -1,29 +1,17 @@
 #!/bin/bash
 
-echo "----------------"
-echo "cpu info min freq"
-cat /sys/devices/system/cpu/cpu*/cpufreq/cpuinfo_min_freq
+TARGET_FREQ=3.2GHz
 
+# set userspace governor
 echo "----------------"
-echo "cpu info max freq"
-cat /sys/devices/system/cpu/cpu*/cpufreq/cpuinfo_max_freq
+echo "set governor to userspace"
+sudo cpupower frequency-set -g userspace
 
+# set frequency
 echo "----------------"
-echo "cpu scaling_min_freq"
-cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_min_freq
+echo "set cpu frequency"
+sudo cpupower frequency-set -f $TARGET_FREQ
+#sudo cpupower frequency-set --max $TARGET_FREQ --min $TARGET_FREQ
 
-echo "----------------"
-echo "cpu scaling_max_freq"
-cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_max_freq
-
-echo "----------------"
-echo "try to lock cpu min freq"
-echo 3200000 | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_min_freq
-
-echo "----------------"
-echo "try to lock cpu max freq"
-echo 3200000 | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_max_freq
-
-echo "----------------"
-echo "cpu scaling_cur_freq"
+# show current frequency
 cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq
