@@ -95,8 +95,10 @@
   ```
 - 若需要的话, 设置大页, 在 `GRUB_CMDLINE_LINUX_DEFAULT` 中增加
   ```
-  transparent_hugepage=never \
-  hugepagesz=1G hugepages=2 \
+  transparent_hugepage=madvise \
+  default_hugepagesz=2MB \
+  hugepagesz=2M hugepages=1024 \
+  hugepagesz=1G hugepages=2
   ```
 - 更新 GRUB 配置并重启
   ```
