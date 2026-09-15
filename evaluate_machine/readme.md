@@ -3,15 +3,6 @@
 ## 概述
 本工程提供统一的服务器评估方法, 包括对 CPU 性能, CPU 核间通讯性能, 服务器烤机的监测
 
-## 工具
-本工程进行评估所使用的工具有
-- 核间通讯测试 (c2c_benchmark_store_load)
-- 带竞争的核间通讯测试 (c2c_benchmark_chan)
-- CPU 计算性能测试 (stress_ng_cpu)
-- CPU 缓存测试 (stress_ng_cache)
-- 内存测试 (stress_ng_vm)
-- IO 测试 (stress_ng_io)
-
 注意:
 - 由于不同版本的 `stress-ng` 计算 `bogo ops/s` 可能是有差别的, 所以我们必须使用相同版本的工具来进行测试
 
