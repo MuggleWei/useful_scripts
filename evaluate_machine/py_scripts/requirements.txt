@@ -1,0 +1,5 @@
+#pynvim
+#ruff
+#ruff-lsp
+
+psutil
