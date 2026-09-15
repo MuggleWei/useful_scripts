@@ -210,7 +210,7 @@ if __name__ == "__main__":
                              os.path.join(output_dir, "freqs_max.csv"))
 
     while True:
-        time.sleep(3)
+        time.sleep(30)
         dt = datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
 
         writer_temp.dump(dt)
