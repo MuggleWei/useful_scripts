@@ -7,4 +7,4 @@ py_dir=$root_dir/py_scripts
 cd $py_dir
 source venv/bin/activate
 export PYTHONPATH=$PWD
-python monitor_cpu.py
+python monitor_sys.py

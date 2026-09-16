@@ -40,7 +40,7 @@ def sort_key(s):
     return (priority, int(id))
 
 
-class TempWriter:
+class CpuTempWriter:
     def __init__(self, output_path):
         self._f = None
         self._writer = None
@@ -83,7 +83,7 @@ class TempWriter:
             self._f.flush()
 
 
-class PercentWriter:
+class CpuPercentWriter:
     def __init__(self, output_path):
         self._f = None
         self._writer = None
@@ -124,7 +124,7 @@ class PercentWriter:
         self._f.flush()
 
 
-class FreqWriter:
+class CpuFreqWriter:
     def __init__(self, output_cur_path, output_min_path, output_max_path):
         self._f_cur = None
         self._writer_cur = None
@@ -174,7 +174,7 @@ class FreqWriter:
             self._writer_max.writeheader()
             self._f_max.flush()
 
-    def dump(self, dt, key=None):
+    def dump(self, dt):
         if self._f_cur is None:
             return
 
@@ -197,17 +197,52 @@ class FreqWriter:
         self._f_max.flush()
 
 
+class MemPercentWriter:
+    def __init__(self, output_path):
+        self._f = None
+        self._writer = None
+
+        # field names
+        self._fieldnames = ["datetime", "memory"]
+        mem = psutil.virtual_memory()
+        if not mem:
+            print("failed read virtual memory")
+            return
+
+        # open file
+        if os.path.exists(output_path):
+            self._f = open(output_path, "a", encoding="utf-8")
+            self._writer = csv.DictWriter(self._f, fieldnames=self._fieldnames)
+        else:
+            self._f = open(output_path, "w", encoding="utf-8")
+            self._writer = csv.DictWriter(self._f, fieldnames=self._fieldnames)
+            self._writer.writeheader()
+            self._f.flush()
+
+    def dump(self, dt):
+        if self._f is None:
+            return
+
+        mem = psutil.virtual_memory()
+        row = {}
+        row["datetime"] = dt
+        row["memory"] = mem.percent
+        self._writer.writerow(row)
+        self._f.flush()
+
+
 if __name__ == "__main__":
     # prepare csv writer
     output_dir = "build"
     if not os.path.exists(output_dir):
         os.makedirs(output_dir, exist_ok=True)
 
-    writer_temp = TempWriter(os.path.join(output_dir, "temps.csv"))
-    writer_percent = PercentWriter(os.path.join(output_dir, "percents.csv"))
-    writer_freq = FreqWriter(os.path.join(output_dir, "freqs_cur.csv"),
-                             os.path.join(output_dir, "freqs_min.csv"),
-                             os.path.join(output_dir, "freqs_max.csv"))
+    writer_temp = CpuTempWriter(os.path.join(output_dir, "temps.csv"))
+    writer_percent = CpuPercentWriter(os.path.join(output_dir, "percents.csv"))
+    writer_freq = CpuFreqWriter(os.path.join(output_dir, "freqs_cur.csv"),
+                                os.path.join(output_dir, "freqs_min.csv"),
+                                os.path.join(output_dir, "freqs_max.csv"))
+    writer_mem = MemPercentWriter(os.path.join(output_dir, "mem.csv"))
 
     while True:
         time.sleep(30)
@@ -215,4 +250,5 @@ if __name__ == "__main__":
 
         writer_temp.dump(dt)
         writer_percent.dump(dt)
-        writer_freq.dump(dt, key="cur")
+        writer_freq.dump(dt)
+        writer_mem.dump(dt)

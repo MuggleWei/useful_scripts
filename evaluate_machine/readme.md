@@ -14,11 +14,8 @@
 - 按自己的需求, 对系统参数进行调整 (例如固定 CPU 频率, 保留大页内存等)
 - 运行核间通讯测试: `./scripts/run_c2c_bench_store_load.sh`
 - 运行带竞争的核间通讯测试: `./scripts/run_c2c_bench_chan.sh`
-- 运行 CPU 计算性能测试, 同时进行监控 CPU 各个核的情况
-  - 运行监控: `./scripts/run_cpu_monitor.sh`
-  - 运行 CPU 计算性能测试: `./scripts/run_test_cpu.sh`
-- 运行 CPU 缓存测试, 同时进行监控 CPU 各个核的情况
-  - 运行监控: `./scripts/run_cpu_monitor.sh`
-  - 运行 CPU 缓存测试: `./scripts/run_test_cache.sh`
+- 启动监控: `./scripts/run_monitor.sh`
+- 运行 CPU 计算性能测试: `./scripts/run_test_cpu.sh`
+- 运行 CPU 缓存测试: `./scripts/run_test_cache.sh`
 - 运行内存测试: `./scripts/run_test_vm.sh`
 - 运行 IO 测试: `./scripts/run_test_io.sh`
