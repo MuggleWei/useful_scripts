@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$#" -lt 2 ]; then
+if [ "$#" -lt 1 ]; then
 	echo "[ERROR] Usage: run_monitor.sh <moniter_interval>"
 	exit 1
 fi
