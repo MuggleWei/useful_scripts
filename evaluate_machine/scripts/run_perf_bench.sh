@@ -6,7 +6,7 @@ deps_dir=$root_dir/_deps
 dist_dir=$deps_dir/dist
 stress_ng=$dist_dir/usr/bin/stress-ng
 output_dir="$root_dir/output"
-output_name="stress-ng-bench-$(date +%Y%m%d-%H%M%S).log"
+output_name="perf_bench.$(date +%Y%m%d-%H%M%S).log"
 output="$output_dir/$output_name"
 
 if [ ! -d $output_dir ]; then
