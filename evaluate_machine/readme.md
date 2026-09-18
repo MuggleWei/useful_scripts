@@ -19,3 +19,6 @@
 - 运行 CPU 缓存测试: `./scripts/run_test_cache.sh`
 - 运行内存测试: `./scripts/run_test_vm.sh`
 - 运行 IO 测试: `./scripts/run_test_io.sh`
+- 运行烤机测试:
+  - 综合的压测, 模拟真实极限压力: `./scripts/run_burn_in_1.sh`
+  - 单独压测 CPU, 考察发热量: `./scripts/run_burn_in_2.sh`
