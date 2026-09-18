@@ -2,6 +2,7 @@ import csv
 import datetime
 import os
 import time
+import sys
 
 import psutil
 
@@ -232,6 +233,11 @@ class MemPercentWriter:
 
 
 if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        interval = 30
+    else:
+        interval = int(sys.argv[1])
+
     # prepare csv writer
     output_dir = "build"
     if not os.path.exists(output_dir):
@@ -245,7 +251,7 @@ if __name__ == "__main__":
     writer_mem = MemPercentWriter(os.path.join(output_dir, "mem.csv"))
 
     while True:
-        time.sleep(30)
+        time.sleep(interval)
         dt = datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
 
         writer_temp.dump(dt)

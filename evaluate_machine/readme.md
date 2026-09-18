@@ -14,7 +14,8 @@
 - 按自己的需求, 对系统参数进行调整 (例如固定 CPU 频率, 保留大页内存等)
 - 运行核间通讯测试: `./scripts/run_c2c_bench_store_load.sh`
 - 运行带竞争的核间通讯测试: `./scripts/run_c2c_bench_chan.sh`
-- 启动监控: `./scripts/run_monitor.sh`
+- 启动监控: `./scripts/run_monitor.sh <监控间隔的秒数>`
+- 运行对比测试: `./scripts/run_perf_bench.sh`
 - 运行烤机测试:
   - 综合的压测, 模拟真实极限压力: `./scripts/run_burn_in_1.sh`
   - 单独压测 CPU, 考察发热量: `./scripts/run_burn_in_2.sh`
