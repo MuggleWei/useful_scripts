@@ -45,7 +45,7 @@ sudo -H -u git gitolite/install -to /home/$user_name/bin
 sudo -H -u git env PATH=$PATH:/home/$user_name/bin gitolite setup -pk ./gitolite_migrate/keys/$user_name.pub
 
 # copy rc file
-mv ./gitolite_migrate/.gitolite.rc .
+sudo -H -u git mv ./gitolite_migrate/.gitolite.rc .
 
 # copy all repositories
-mv ./gitolite_migrate/repositories/* /home/$user_name/repositories/
+sudo -H -u git mv ./gitolite_migrate/repositories/* /home/$user_name/repositories/
