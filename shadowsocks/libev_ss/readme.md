@@ -3,11 +3,6 @@
 * modify server_config.json
 * run server_run.sh
 
-### shadowsocks client config(old, not recommended)
-* run old_client_install.sh
-* modify client_config.json
-* run old_client_run.sh
-
 ### shadowsocks client config(new)
 * install
 ```
