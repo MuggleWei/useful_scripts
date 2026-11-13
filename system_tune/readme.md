@@ -94,7 +94,7 @@
 ### 其他
 还有诸如关闭 iommu、nmi_watchdog 等, 就不一一介绍了
 
-## 调校操作总结
+## 手动调校操作总结
 - 开机启动, 在 BIOS 中
   - 关闭超线程 (Intel 的 Hyper-Threading 或 AMD 的 SMT)
   - 关闭虚拟化: VT-d/VT-x, IOMMU
