@@ -17,6 +17,8 @@
   - 调用 `tuned-adm profile muggle`
   - 重启系统, 并通过 `cat /proc/cmdline` 查看改动是否生效
 
+这里有一个需要注意的地方, tuned 是通过向 grub.cfg 中写入 tuned_params 来实现操作 grub 参数; 所以如果要同时修改 `/etc/default/grub` 和 tuned 配置文件之后生成 grub, 要先使用 grub-mkconfig 使 `/etc/default/grub` 生效, 而后使用 `tuned-adm profile` 使 tuned 配置写入; 如果先生成 tuned, 在 grub-mkconfig, 会把 tuned 的配置给覆盖了
+
 ## 手动调校
 不想自动调教, 而是想自己逐步进行修改, 可以选择手动调教
 
