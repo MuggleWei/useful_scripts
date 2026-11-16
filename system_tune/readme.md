@@ -13,7 +13,7 @@
   ```
 * 在调教的基础上新增: 在核隔离 (`cpu-partitioning` 包含了 `network-latency`) 基础上进行修改
   - 修改 `/etc/tuned/cpu-partitioning-variables.conf`, 设置 `isolated_cores=1-3`
-  - 将 `muggle.conf` 放入 `/etc/tuned/muggle`
+  - 将 `tuned.conf` 放入 `/etc/tuned/muggle`
   - 调用 `tuned-adm profile muggle`
   - 重启系统, 并通过 `cat /proc/cmdline` 查看改动是否生效
 
