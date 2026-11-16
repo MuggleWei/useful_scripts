@@ -4,18 +4,18 @@
 此目录中包含了一些系统调较的脚本/操作说明
 
 ## 自动调教
-不想逐一调教的话, 可以直接选择安装 `tuned`, 之后使用 `tuned-adm profile` 选择一个指定的调教, 如果需要做核隔离与大页, 直接在对应的 `tuned` 配置文件中修改即可  
+不想逐一调教的话, 可以直接选择安装 `tuned`, 之后使用 `tuned-adm profile` 选择一个指定的调教, 或者再在其基础上进行更改
 
 例如:
-* 选择低网络延迟
+* 指定调教: 选择低网络延迟
   ```
   tuned-adm profile network-latency
   ```
-* 在低网络延迟的基础上进行和隔离 (`cpu-partitioning` 包含了 `network-latency`)
-  ```
-  echo "isolated_cores=1-3" > /etc/tuned/cpu-partitioning-variables.conf
-  tuned-adm profile cpu-partitioning
-  ```
+* 在调教的基础上新增: 在核隔离 (`cpu-partitioning` 包含了 `network-latency`) 基础上进行修改
+  - 修改 `/etc/tuned/cpu-partitioning-variables.conf`, 设置 `isolated_cores=1-3`
+  - 将 `muggle.conf` 放入 `/etc/tuned/muggle`
+  - 调用 `tuned-adm profile muggle`
+  - 重启系统, 并通过 `cat /proc/cmdline` 查看改动是否生效
 
 ## 手动调校
 不想自动调教, 而是想自己逐步进行修改, 可以选择手动调教
